@@ -2,11 +2,11 @@
 
 import pandas as pd
 import numpy as np
-import scipy as sp
-import scipy.stats as sps
+#import scipy as sp
+#import scipy.stats as sps
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
-from scipy.optimize import minimize
+#from scipy.optimize import minimize
 
 plt.close('all')
 direc="C:/Users/mjh/Documents/commodity_pimco/"
@@ -58,21 +58,14 @@ for j in range(12):
            M_oil.iloc[i,j]=0      
            
 aa = M_gold.sum(axis=1)  
-
 bb = M_oil.sum(axis=1)  
-
 cc = pd.concat([aa,bb],axis=1)    
-
 cc['w_gold'] = (cc[0]/(cc[0]+cc[1])).fillna(0.5)   
-
 cc['w_oil'] =(cc[1]/(cc[0]+cc[1])).fillna(0.5)
-
 w = cc.loc[:n+1]
-      
-#       
+  
 w_gold = (M_gold.mean(axis=0).sum()/12)/(M_gold.mean(axis=0).sum()/12+M_oil.mean(axis=0).sum()/12)  
 w_oil = (M_oil.mean(axis=0).sum()/12)/(M_gold.mean(axis=0).sum()/12+M_oil.mean(axis=0).sum()/12)  
-
 
 wg = pd.DataFrame(w['w_gold'])      
 wo = pd.DataFrame( w['w_oil'])
@@ -110,16 +103,14 @@ for i in range(n):
 vw_oilret = pd.DataFrame((oil_ret*oil_MonthlyW.values).sum(axis=1))
 vw_goldret = pd.DataFrame((gold_ret*gold_MonthlyW.values).sum(axis=1))
 
-nre = vw_oilret*0.5+vw_goldret*0.5
+nre = vw_oilret*(54.68/59.41)+vw_goldret*(4.73/59.41)
 
 #Spx_ret = (-1)*Spx.pct_change(-1)
 Spx_ret = (Spx/Spx.shift(1)-1)
 
-
 Ci=ret_CI_PF[1:]#x1
 Spx_Index=Spx_ret[1:]   #x2
 nre=pd.DataFrame(nre.values)[1:]
-
 
 #sharpe_PF = (ret_CI_PF-rf.values).mean()*12/(ret_CI_PF.std()*np.sqrt(12))
 
@@ -143,7 +134,7 @@ rsqured_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoiln
 ####### 동일비중 NRE ~  CI 모멘텀 회귀
 #################################################
 
-text_file = open("Mimic_PF_result.txt", "w")
+text_file = open("result/Mimic_PF_result.txt", "w")
 Mimic_PF_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 rsquare_list = []
 for i in range(numberOfwindow):
@@ -202,7 +193,8 @@ plt.legend(loc=2, prop={'size': 7})
 plt.title('Replicating NRE : rolling betas using 120 monthly observations')
 plt.ylabel('beta')
 plt.xlabel('time(Y)')
-plt.show()
+plt.savefig('result/1.jpg')
+plt.close()
 
 
 fig = plt.figure(2)
@@ -221,7 +213,8 @@ plt.legend(loc=2, prop={'size': 10})
 plt.title('Growth of a dollar for replicating portfolio and NRE portfolio')
 plt.ylabel('Growth of a dollar($)')
 plt.xlabel('time(Y)')
-plt.show()
+plt.savefig('result/2.jpg')
+plt.close()
 
 fig = plt.figure(3)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -234,8 +227,8 @@ plt.legend(loc=2, prop={'size': 7})
 plt.title('Monthly Return of NRE and replicating portfolio')
 plt.ylabel('return')
 plt.xlabel('time(Y)')
-plt.show()
-
+plt.savefig('result/3.jpg')
+plt.close()
 #%%
 #################################################
 ####### 시총비중 Gold NRE ~  가중평균 Gold CI 회귀
@@ -250,7 +243,7 @@ gold_vw_nre_buff = gold_vw_nre[121:]
 
 VW_GOLD_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 rsquare_list = []
-text_file = open("vw_gold.txt", "w")
+text_file = open("result/vw_gold.txt", "w")
 for i in range(numberOfwindow):
     x = []
     x.append(ret_goldCI[1+i:121+i])
@@ -264,6 +257,7 @@ text_file.close()
 vw_goldCI_beta =pd.DataFrame(VW_GOLD_result['x1'])
 vw_ME_betaG = pd.DataFrame(VW_GOLD_result['x2'])
 gold_vw_nre = pd.DataFrame(gold_vw_nre).reset_index(drop=True)
+VW_GOLD_result_beta = VW_GOLD_result
 VW_GOLD_result=pd.DataFrame(ret_goldCI_buff.values*vw_goldCI_beta.values+Spx_Index_buff.values*vw_ME_betaG.values+rf_buff*(1-vw_goldCI_beta.values-vw_ME_betaG.values))
 
 sharpe_PF_3 = (VW_GOLD_result-rf_buff.values).mean()*12/(VW_GOLD_result.std()*np.sqrt(12))
@@ -295,8 +289,8 @@ plt.plot(date_index.index,vw_goldCI_beta,'r-',label='Broad commodities composite
 plt.plot(date_index.index,vw_ME_betaG,'b-',label = 'S&P beta')
 plt.plot(date_index.index,1-vw_goldCI_beta.values-vw_ME_betaG.values,'g-',label = 'Cash beta')
 plt.legend(loc=2, prop={'size': 7})
-plt.show()
-
+plt.savefig('result/7.jpg')
+plt.close()
 
 fig = plt.figure(8)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -311,7 +305,8 @@ plt.plot(date_index.index,gold_vw_nre_buff_cum,'r-',label='NRE')
 plt.plot(date_index.index,VW_GOLD_result_cum,'b-',label = 'Replicating portfolio')
 #plt.plot(date_index.index,excess_ret_cum2,'g-',label = 'Excess return')
 plt.legend(loc=2, prop={'size': 7})
-plt.show()
+plt.savefig('result/8.jpg')
+plt.close()
 
 fig = plt.figure(9)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -321,7 +316,8 @@ plt.rcParams['axes.grid'] = True
 plt.plot(date_index.index,gold_vw_nre_buff,'r-',label='NRE')
 plt.plot(date_index.index,VW_GOLD_result,'b-',label = 'Replicating portfolio')
 plt.legend(loc=2, prop={'size': 7})
-plt.show()
+plt.savefig('result/9.jpg')
+plt.close()
 #%%
 #################################################
 ####### Value Weighted OIL NRE 
@@ -336,7 +332,7 @@ oil_vw_nre = vw_oil.multiply(oil_ret).sum(axis=1)
 oil_vw_nre_buff = oil_vw_nre[121:]
 
 VW_OIL_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
-text_file = open("vw_oil.txt", "w")
+text_file = open("result/vw_oil.txt", "w")
 rsquare_list = []
 for i in range(numberOfwindow):
     x = []
@@ -351,6 +347,7 @@ text_file.close()
 x1 =pd.DataFrame(VW_OIL_result['x1'])
 x2 = pd.DataFrame(VW_OIL_result['x2'])
 oil_vw_nre = pd.DataFrame(oil_vw_nre).values
+VW_OIL_result_beta = VW_OIL_result
 VW_OIL_result=pd.DataFrame(ret_petCI_buff.values*x1.values+Spx_Index_buff.values*x2.values+rf_buff*(1-x1.values-x2.values))
 
 sharpe_PF_4 = (VW_OIL_result-rf_buff.values).mean()*12/(VW_OIL_result.std()*np.sqrt(12))
@@ -388,8 +385,8 @@ plt.legend(loc=2, prop={'size': 10  })
 plt.title('S&P GSCI PETROLEUM & Oil NRE Cumulative Return')
 plt.ylabel('return')
 plt.xlabel('time(Y)')
-plt.show()
-
+plt.savefig('result/10.jpg')
+plt.close()
 ## RSquare
 fig = plt.figure(11)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -402,4 +399,48 @@ plt.plot(date_index.index,rsqured_buff['vwoilnre'],'g-',label = 'vwoilnre')
 plt.legend(loc=2, prop={'size': 10  })
 plt.ylabel('RSquare')
 plt.xlabel('time(Y)')
-plt.show()
+plt.savefig('result/11.jpg')
+plt.close()
+
+## Mimic_PF_result Beta
+fig = plt.figure(12)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index.index,Mimic_PF_result['x1'],'r-',label='CI')
+plt.plot(date_index.index,Mimic_PF_result['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,Mimic_PF_result['c'],'g-',label = 'c')
+plt.legend(loc=2, prop={'size': 10  })
+plt.title('Mimic_PF_result Beta')
+plt.xlabel('time(Y)')
+plt.savefig('result/12.jpg')
+plt.close()
+## VW_OIL_result_beta
+fig = plt.figure(13)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index.index,VW_OIL_result_beta['x1'],'r-',label='CI')
+plt.plot(date_index.index,VW_OIL_result_beta['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,VW_OIL_result_beta['c'],'g-',label = 'c')
+plt.legend(loc=2, prop={'size': 10  })
+plt.title('VW_OIL_result Beta')
+plt.xlabel('time(Y)')
+plt.savefig('result/13.jpg')
+plt.close()
+## VW_GOLD_result_beta
+fig = plt.figure(14)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index.index,VW_GOLD_result_beta['x1'],'r-',label='CI')
+plt.plot(date_index.index,VW_GOLD_result_beta['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,VW_GOLD_result_beta['c'],'g-',label = 'c')
+plt.legend(loc=2, prop={'size': 10  })
+plt.title('VW_GOLD_result Beta')
+plt.xlabel('time(Y)')
+plt.savefig('result/14.jpg')
+plt.close()  
