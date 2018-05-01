@@ -24,14 +24,14 @@ goldcap.index = pd.to_datetime(goldcap.index,format='%Y-%m-%d')
 origin = pd.read_csv(direc+'origin2.csv',header =0,encoding='CP949',engine='python').set_index('Date',drop=True)
 origin.index = pd.to_datetime(origin.index,format='%Y-%m-%d') 
 
+#s&p 500 10년간 Return
+snp_500 = pd.read_csv(direc+'tbill_trsnp500.csv',header =0 ,encoding='CP949',engine='python')
+snp_500 = snp_500['S&P 500'][120:]
+snp_500_ret = (snp_500/snp_500.shift(1)-1)
 
 pet_CI = pd.DataFrame(origin['SPXGS_PTRM']).reset_index(drop=True)
-
-
 gold_CI = pd.DataFrame(origin['SPXGS_GTRM']).reset_index(drop=True)
-
 Spx = pd.DataFrame(origin['S&P500']).reset_index(drop=True)
-
 rf = pd.DataFrame(origin['LIBOR_3M'].fillna(0)/1200).reset_index(drop=True)
 
 date_index = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080630':'20180228']
@@ -46,7 +46,6 @@ for j in range(12):
            M_gold.iloc[i,j]=1
         else:
            M_gold.iloc[i,j]=0
-       
 
 #모멘텀 1~12개월 롤링 스코어 (오일)
 M_oil = pd.DataFrame(np.zeros((n,12)))
@@ -73,7 +72,6 @@ wo = pd.DataFrame( w['w_oil'])
 ret_goldCI = (gold_CI/gold_CI.shift(1)-1)   
 ret_petCI = (pet_CI/pet_CI.shift(1)-1)
 
-#ret_CI_PF = ret_goldCI.values*w_gold+ret_petCI.values*w_oil
 ret_CI_PF =ret_goldCI.values*wg.values+ret_petCI.values*wo.values
 
 ret_CI_PF[0]=0
@@ -112,9 +110,6 @@ Ci=ret_CI_PF[1:]#x1
 Spx_Index=Spx_ret[1:]   #x2
 nre=pd.DataFrame(nre.values)[1:]
 
-#sharpe_PF = (ret_CI_PF-rf.values).mean()*12/(ret_CI_PF.std()*np.sqrt(12))
-
-#Rolling 116 window - vw_vw_nre
 def reg_m(y, x):
     ones = np.ones(len(x[0]))
     X = sm.add_constant(np.column_stack((x[0], ones)))
@@ -129,6 +124,7 @@ numberOfmonthIn10Y=120
 ret_goldCI_buff = ret_goldCI[121:]
 ret_petCI_buff = ret_petCI[121:]
 rsqured_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoilnre'])
+stderr_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoilnre'])
 #%%
 #################################################
 ####### 동일비중 NRE ~  CI 모멘텀 회귀
@@ -137,15 +133,18 @@ rsqured_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoiln
 text_file = open("result/Mimic_PF_result.txt", "w")
 Mimic_PF_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 rsquare_list = []
+std_list = []
 for i in range(numberOfwindow):
     x = []
     x.append(Ci[0+i:numberOfmonthIn10Y+i])
     x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i])
     result = reg_m(nre[0 + i:numberOfmonthIn10Y+i], x)
     rsquare_list.append(result.rsquared)
+    std_list.append(result.bse)
     text_file.write(result.summary().as_text())
     Mimic_PF_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
 rsqured_buff['ewnre_momentumci'] = pd.Series(rsquare_list).values
+stderr_buff['ewnre_momentumci'] = pd.Series(std_list).values
 text_file.close()
 
 Ci_buff=pd.DataFrame(Ci[numberOfmonthIn10Y:]).reset_index(drop=True)
@@ -243,6 +242,7 @@ gold_vw_nre_buff = gold_vw_nre[121:]
 
 VW_GOLD_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 rsquare_list = []
+std_list=[]
 text_file = open("result/vw_gold.txt", "w")
 for i in range(numberOfwindow):
     x = []
@@ -250,9 +250,12 @@ for i in range(numberOfwindow):
     x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i])
     result = reg_m(gold_vw_nre[1 + i:121+i], x)
     rsquare_list.append(result.rsquared)
+    std_list.append(result.bse)
     text_file.write(result.summary().as_text())
     VW_GOLD_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
 rsqured_buff['vwnre_ewgoldci'] = pd.Series(rsquare_list).values
+stderr_buff['vwnre_ewgoldci'] = pd.Series(std_list).values
+
 text_file.close()
 vw_goldCI_beta =pd.DataFrame(VW_GOLD_result['x1'])
 vw_ME_betaG = pd.DataFrame(VW_GOLD_result['x2'])
@@ -334,15 +337,19 @@ oil_vw_nre_buff = oil_vw_nre[121:]
 VW_OIL_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 text_file = open("result/vw_oil.txt", "w")
 rsquare_list = []
+std_list = []
 for i in range(numberOfwindow):
     x = []
     x.append(ret_petCI[1+i:121+i])
     x.append(Spx_Index[0+i:numberOfmonthIn10Y+i])
     result = reg_m(oil_vw_nre[1 + i:121+i], x)
     rsquare_list.append(result.rsquared)
+    std_list.append(result.bse)
     text_file.write(result.summary().as_text())
     VW_OIL_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
 rsqured_buff['vwoilnre'] = pd.Series(rsquare_list).values
+stderr_buff['vwoilnre'] = pd.Series(std_list).values
+
 text_file.close()
 x1 =pd.DataFrame(VW_OIL_result['x1'])
 x2 = pd.DataFrame(VW_OIL_result['x2'])
@@ -387,6 +394,7 @@ plt.ylabel('return')
 plt.xlabel('time(Y)')
 plt.savefig('result/10.jpg')
 plt.close()
+
 ## RSquare
 fig = plt.figure(11)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -416,6 +424,7 @@ plt.title('Mimic_PF_result Beta')
 plt.xlabel('time(Y)')
 plt.savefig('result/12.jpg')
 plt.close()
+
 ## VW_OIL_result_beta
 fig = plt.figure(13)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -430,6 +439,7 @@ plt.title('VW_OIL_result Beta')
 plt.xlabel('time(Y)')
 plt.savefig('result/13.jpg')
 plt.close()
+
 ## VW_GOLD_result_beta
 fig = plt.figure(14)
 plt.rcParams["figure.figsize"] = (10,6)
@@ -443,4 +453,40 @@ plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_GOLD_result Beta')
 plt.xlabel('time(Y)')
 plt.savefig('result/14.jpg')
-plt.close()  
+plt.close()
+
+## VW_GOLD_result_beta
+
+date_index_cum2 = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080615':'20180228']
+
+fig = plt.figure(15)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index_cum2.index,(snp_500_ret+1).cumprod()-1,'r-',label='S&P500')
+#plt.plot(date_index_cum2.index,(ret_petCI['SPXGS_PTRM'][1:]+1).cumprod()-1,'b-',label='SPXGS_PTRM')
+#plt.plot(date_index_cum2.index,(ret_goldCI['SPXGS_GTRM'][1:]+1).cumprod()-1,'g-',label='SPXGS_GTRM')
+plt.plot(date_index_cum2.index,(Mimic_PF_ret[0]+1).cumprod()-1,'y-',label='Mimic_PF_ret')
+
+plt.legend(loc=2, prop={'size': 10  })
+plt.xlabel('time(Y)')
+plt.savefig('result/15.jpg')
+plt.close()
+
+
+# Histogram Plot
+#plt.hist(VW_OIL_result.values,30)
+#plt.show()
+#
+#plt.hist(VW_GOLD_result.values,30)
+#plt.show()
+
+#Skewness - Remove Outlier
+minm_MM = Mimic_PF_ret.sort_values(by=0).reset_index(drop=True)
+minm_Oil = VW_OIL_result.sort_values(by=0).reset_index(drop=True)
+minm_Gold = VW_GOLD_result.sort_values(by=0).reset_index(drop=True)
+
+print ("Skew MM : ",pd.DataFrame(minm_MM[0][10:]).skew())
+print ("Skew Oil : ",pd.DataFrame(minm_Oil[0][:]).skew())
+print ("Skew Gold : ",pd.DataFrame(minm_Gold[0][10:]).skew())
