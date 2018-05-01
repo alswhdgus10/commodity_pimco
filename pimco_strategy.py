@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-Created on Thu Apr 26 16:44:39 2018
-
-@author: 이규형
-"""
-
 import pandas as pd
 import numpy as np
 import scipy as sp
@@ -143,6 +137,7 @@ numberOfmonthIn10Y=120
 
 ret_goldCI_buff = ret_goldCI[121:]
 ret_petCI_buff = ret_petCI[121:]
+rsqured_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoilnre'])
 #%%
 #################################################
 ####### 동일비중 NRE ~  CI 모멘텀 회귀
@@ -150,16 +145,16 @@ ret_petCI_buff = ret_petCI[121:]
 
 text_file = open("Mimic_PF_result.txt", "w")
 Mimic_PF_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
-rsquare_sum=0
+rsquare_list = []
 for i in range(numberOfwindow):
     x = []
     x.append(Ci[0+i:numberOfmonthIn10Y+i])
     x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i])
     result = reg_m(nre[0 + i:numberOfmonthIn10Y+i], x)
-    rsquare_sum = rsquare_sum+result.rsquared
+    rsquare_list.append(result.rsquared)
     text_file.write(result.summary().as_text())
     Mimic_PF_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
-
+rsqured_buff['ewnre_momentumci'] = pd.Series(rsquare_list).values
 text_file.close()
 
 Ci_buff=pd.DataFrame(Ci[numberOfmonthIn10Y:]).reset_index(drop=True)
@@ -184,7 +179,7 @@ df['b'] = nre_buff[0].reset_index(drop=True)
 Model_corr = df['a'].corr(df['b'])
 
 print('####### 동일비중 NRE ~  CI 모멘텀 회귀 #######')
-print("Rsquare Mean: %.3f" %(rsquare_sum/numberOfwindow))
+print("Rsquare Mean: %.3f" %(sum(rsquare_list) / float(len(rsquare_list))))
 print('Model correlation = %.2f' %(Model_corr))
 print('sh_PF= %.2f' %(sharpe_PF))
 print('sh_NRE= %.2f' %(sharpe_nre))
@@ -254,17 +249,17 @@ gold_vw_nre = vw_gold.multiply(gold_ret).sum(axis=1)
 gold_vw_nre_buff = gold_vw_nre[121:]
 
 VW_GOLD_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
-rsquare_sum=0
+rsquare_list = []
 text_file = open("vw_gold.txt", "w")
 for i in range(numberOfwindow):
     x = []
     x.append(ret_goldCI[1+i:121+i])
     x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i])
     result = reg_m(gold_vw_nre[1 + i:121+i], x)
-    rsquare_sum = rsquare_sum+result.rsquared
+    rsquare_list.append(result.rsquared)
     text_file.write(result.summary().as_text())
     VW_GOLD_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
-
+rsqured_buff['vwnre_ewgoldci'] = pd.Series(rsquare_list).values
 text_file.close()
 vw_goldCI_beta =pd.DataFrame(VW_GOLD_result['x1'])
 vw_ME_betaG = pd.DataFrame(VW_GOLD_result['x2'])
@@ -281,7 +276,7 @@ df2['b'] = pd.DataFrame(gold_vw_nre_buff)[0].reset_index(drop=True)
 Model_corr2 = df2['a'].corr(df2['b'])
 
 print('####### 시총비중 Gold NRE ~  가중평균 Gold CI 회귀  #######')
-print("Rsquare Mean: %.3f" %(rsquare_sum/numberOfwindow))      
+print("Rsquare Mean: %.3f" %(sum(rsquare_list) / float(len(rsquare_list))))  
 print('Model correlation = %.2f' %(Model_corr2))
 print('sh_PF_VW_GOLD= %.2f' %(sharpe_PF_3))
 print('sh_NRE_VW_GOLD= %.2f' %(sharpe_nre_3))
@@ -329,7 +324,7 @@ plt.legend(loc=2, prop={'size': 7})
 plt.show()
 #%%
 #################################################
-####### Value Weighted OIL NRE
+####### Value Weighted OIL NRE 
 #################################################
 vw_oil=pd.DataFrame()
 
@@ -342,16 +337,16 @@ oil_vw_nre_buff = oil_vw_nre[121:]
 
 VW_OIL_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 text_file = open("vw_oil.txt", "w")
-rsquare_sum=0
+rsquare_list = []
 for i in range(numberOfwindow):
     x = []
     x.append(ret_petCI[1+i:121+i])
     x.append(Spx_Index[0+i:numberOfmonthIn10Y+i])
     result = reg_m(oil_vw_nre[1 + i:121+i], x)
-    rsquare_sum = rsquare_sum+result.rsquared
+    rsquare_list.append(result.rsquared)
     text_file.write(result.summary().as_text())
     VW_OIL_result.loc[i] = [result.params[0], result.params[1], result.params[2]]
-
+rsqured_buff['vwoilnre'] = pd.Series(rsquare_list).values
 text_file.close()
 x1 =pd.DataFrame(VW_OIL_result['x1'])
 x2 = pd.DataFrame(VW_OIL_result['x2'])
@@ -368,7 +363,7 @@ df3['b'] = oil_vw_nre_buff_df[0].reset_index(drop=True)
 Model_corr3 = df3['a'].corr(df3['b'])
 
 print('####### 시총비중 Oil NRE ~  가중평균 Oil CI 회귀  #######')
-print("Rsquare Mean: %.3f" %(rsquare_sum/numberOfwindow))      
+print("Rsquare Mean: %.3f" %(sum(rsquare_list) / float(len(rsquare_list))))  
 print('Model correlation = %.2f' %(Model_corr3))
 print('sh_PF_VW_OIL= %.2f' %(sharpe_PF_4))
 print('sh_NRE_VW_OIL= %.2f' %(sharpe_nre_4))
@@ -395,3 +390,16 @@ plt.ylabel('return')
 plt.xlabel('time(Y)')
 plt.show()
 
+## RSquare
+fig = plt.figure(11)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index.index,rsqured_buff['ewnre_momentumci'],'r-',label='ewnre_momentumci')
+plt.plot(date_index.index,rsqured_buff['vwnre_ewgoldci'],'b-',label = 'vwnre_ewgoldci')
+plt.plot(date_index.index,rsqured_buff['vwoilnre'],'g-',label = 'vwoilnre')
+plt.legend(loc=2, prop={'size': 10  })
+plt.ylabel('RSquare')
+plt.xlabel('time(Y)')
+plt.show()

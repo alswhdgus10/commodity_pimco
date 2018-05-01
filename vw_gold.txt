@@ -4,7 +4,7 @@ Dep. Variable:                      y   R-squared:                       0.549
 Model:                            OLS   Adj. R-squared:                  0.541
 Method:                 Least Squares   F-statistic:                     71.09
 Date:                Tue, 01 May 2018   Prob (F-statistic):           6.22e-21
-Time:                        00:20:28   Log-Likelihood:                 158.02
+Time:                        20:29:30   Log-Likelihood:                 158.02
 No. Observations:                 120   AIC:                            -310.0
 Df Residuals:                     117   BIC:                            -301.7
 Df Model:                           2                                         
@@ -29,7 +29,7 @@ Dep. Variable:                      y   R-squared:                       0.542
 Model:                            OLS   Adj. R-squared:                  0.534
 Method:                 Least Squares   F-statistic:                     69.30
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.40e-20
-Time:                        00:20:28   Log-Likelihood:                 158.14
+Time:                        20:29:30   Log-Likelihood:                 158.14
 No. Observations:                 120   AIC:                            -310.3
 Df Residuals:                     117   BIC:                            -301.9
 Df Model:                           2                                         
@@ -54,7 +54,7 @@ Dep. Variable:                      y   R-squared:                       0.556
 Model:                            OLS   Adj. R-squared:                  0.548
 Method:                 Least Squares   F-statistic:                     73.25
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.37e-21
-Time:                        00:20:28   Log-Likelihood:                 159.52
+Time:                        20:29:30   Log-Likelihood:                 159.52
 No. Observations:                 120   AIC:                            -313.0
 Df Residuals:                     117   BIC:                            -304.7
 Df Model:                           2                                         
@@ -79,7 +79,7 @@ Dep. Variable:                      y   R-squared:                       0.561
 Model:                            OLS   Adj. R-squared:                  0.553
 Method:                 Least Squares   F-statistic:                     74.61
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.29e-21
-Time:                        00:20:28   Log-Likelihood:                 159.50
+Time:                        20:29:30   Log-Likelihood:                 159.50
 No. Observations:                 120   AIC:                            -313.0
 Df Residuals:                     117   BIC:                            -304.6
 Df Model:                           2                                         
@@ -104,7 +104,7 @@ Dep. Variable:                      y   R-squared:                       0.522
 Model:                            OLS   Adj. R-squared:                  0.514
 Method:                 Least Squares   F-statistic:                     63.93
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.72e-19
-Time:                        00:20:28   Log-Likelihood:                 156.16
+Time:                        20:29:30   Log-Likelihood:                 156.16
 No. Observations:                 120   AIC:                            -306.3
 Df Residuals:                     117   BIC:                            -298.0
 Df Model:                           2                                         
@@ -129,7 +129,7 @@ Dep. Variable:                      y   R-squared:                       0.595
 Model:                            OLS   Adj. R-squared:                  0.588
 Method:                 Least Squares   F-statistic:                     85.85
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.13e-23
-Time:                        00:20:28   Log-Likelihood:                 169.54
+Time:                        20:29:30   Log-Likelihood:                 169.54
 No. Observations:                 120   AIC:                            -333.1
 Df Residuals:                     117   BIC:                            -324.7
 Df Model:                           2                                         
@@ -154,7 +154,7 @@ Dep. Variable:                      y   R-squared:                       0.606
 Model:                            OLS   Adj. R-squared:                  0.600
 Method:                 Least Squares   F-statistic:                     90.11
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.06e-24
-Time:                        00:20:28   Log-Likelihood:                 169.22
+Time:                        20:29:30   Log-Likelihood:                 169.22
 No. Observations:                 120   AIC:                            -332.4
 Df Residuals:                     117   BIC:                            -324.1
 Df Model:                           2                                         
@@ -179,7 +179,7 @@ Dep. Variable:                      y   R-squared:                       0.616
 Model:                            OLS   Adj. R-squared:                  0.610
 Method:                 Least Squares   F-statistic:                     93.87
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.77e-25
-Time:                        00:20:28   Log-Likelihood:                 168.61
+Time:                        20:29:30   Log-Likelihood:                 168.61
 No. Observations:                 120   AIC:                            -331.2
 Df Residuals:                     117   BIC:                            -322.9
 Df Model:                           2                                         
@@ -204,7 +204,7 @@ Dep. Variable:                      y   R-squared:                       0.621
 Model:                            OLS   Adj. R-squared:                  0.614
 Method:                 Least Squares   F-statistic:                     95.67
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.40e-25
-Time:                        00:20:28   Log-Likelihood:                 169.77
+Time:                        20:29:30   Log-Likelihood:                 169.77
 No. Observations:                 120   AIC:                            -333.5
 Df Residuals:                     117   BIC:                            -325.2
 Df Model:                           2                                         
@@ -229,7 +229,7 @@ Dep. Variable:                      y   R-squared:                       0.617
 Model:                            OLS   Adj. R-squared:                  0.611
 Method:                 Least Squares   F-statistic:                     94.33
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.00e-25
-Time:                        00:20:28   Log-Likelihood:                 169.27
+Time:                        20:29:30   Log-Likelihood:                 169.27
 No. Observations:                 120   AIC:                            -332.5
 Df Residuals:                     117   BIC:                            -324.2
 Df Model:                           2                                         
@@ -254,7 +254,7 @@ Dep. Variable:                      y   R-squared:                       0.607
 Model:                            OLS   Adj. R-squared:                  0.600
 Method:                 Least Squares   F-statistic:                     90.34
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.88e-24
-Time:                        00:20:28   Log-Likelihood:                 166.42
+Time:                        20:29:30   Log-Likelihood:                 166.42
 No. Observations:                 120   AIC:                            -326.8
 Df Residuals:                     117   BIC:                            -318.5
 Df Model:                           2                                         
@@ -279,7 +279,7 @@ Dep. Variable:                      y   R-squared:                       0.610
 Model:                            OLS   Adj. R-squared:                  0.603
 Method:                 Least Squares   F-statistic:                     91.42
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.23e-24
-Time:                        00:20:28   Log-Likelihood:                 166.93
+Time:                        20:29:30   Log-Likelihood:                 166.93
 No. Observations:                 120   AIC:                            -327.9
 Df Residuals:                     117   BIC:                            -319.5
 Df Model:                           2                                         
@@ -304,7 +304,7 @@ Dep. Variable:                      y   R-squared:                       0.627
 Model:                            OLS   Adj. R-squared:                  0.621
 Method:                 Least Squares   F-statistic:                     98.50
 Date:                Tue, 01 May 2018   Prob (F-statistic):           8.30e-26
-Time:                        00:20:28   Log-Likelihood:                 166.80
+Time:                        20:29:30   Log-Likelihood:                 166.80
 No. Observations:                 120   AIC:                            -327.6
 Df Residuals:                     117   BIC:                            -319.2
 Df Model:                           2                                         
@@ -329,7 +329,7 @@ Dep. Variable:                      y   R-squared:                       0.623
 Model:                            OLS   Adj. R-squared:                  0.616
 Method:                 Least Squares   F-statistic:                     96.56
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.72e-25
-Time:                        00:20:28   Log-Likelihood:                 166.96
+Time:                        20:29:30   Log-Likelihood:                 166.96
 No. Observations:                 120   AIC:                            -327.9
 Df Residuals:                     117   BIC:                            -319.6
 Df Model:                           2                                         
@@ -354,7 +354,7 @@ Dep. Variable:                      y   R-squared:                       0.635
 Model:                            OLS   Adj. R-squared:                  0.629
 Method:                 Least Squares   F-statistic:                     101.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.37e-26
-Time:                        00:20:28   Log-Likelihood:                 169.20
+Time:                        20:29:30   Log-Likelihood:                 169.20
 No. Observations:                 120   AIC:                            -332.4
 Df Residuals:                     117   BIC:                            -324.0
 Df Model:                           2                                         
@@ -379,7 +379,7 @@ Dep. Variable:                      y   R-squared:                       0.634
 Model:                            OLS   Adj. R-squared:                  0.628
 Method:                 Least Squares   F-statistic:                     101.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.70e-26
-Time:                        00:20:28   Log-Likelihood:                 169.06
+Time:                        20:29:30   Log-Likelihood:                 169.06
 No. Observations:                 120   AIC:                            -332.1
 Df Residuals:                     117   BIC:                            -323.8
 Df Model:                           2                                         
@@ -404,7 +404,7 @@ Dep. Variable:                      y   R-squared:                       0.640
 Model:                            OLS   Adj. R-squared:                  0.634
 Method:                 Least Squares   F-statistic:                     104.2
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.05e-26
-Time:                        00:20:28   Log-Likelihood:                 169.51
+Time:                        20:29:30   Log-Likelihood:                 169.51
 No. Observations:                 120   AIC:                            -333.0
 Df Residuals:                     117   BIC:                            -324.7
 Df Model:                           2                                         
@@ -429,7 +429,7 @@ Dep. Variable:                      y   R-squared:                       0.637
 Model:                            OLS   Adj. R-squared:                  0.630
 Method:                 Least Squares   F-statistic:                     102.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.94e-26
-Time:                        00:20:28   Log-Likelihood:                 169.89
+Time:                        20:29:30   Log-Likelihood:                 169.89
 No. Observations:                 120   AIC:                            -333.8
 Df Residuals:                     117   BIC:                            -325.4
 Df Model:                           2                                         
@@ -454,7 +454,7 @@ Dep. Variable:                      y   R-squared:                       0.647
 Model:                            OLS   Adj. R-squared:                  0.641
 Method:                 Least Squares   F-statistic:                     107.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.45e-27
-Time:                        00:20:28   Log-Likelihood:                 171.20
+Time:                        20:29:30   Log-Likelihood:                 171.20
 No. Observations:                 120   AIC:                            -336.4
 Df Residuals:                     117   BIC:                            -328.0
 Df Model:                           2                                         
@@ -479,7 +479,7 @@ Dep. Variable:                      y   R-squared:                       0.646
 Model:                            OLS   Adj. R-squared:                  0.640
 Method:                 Least Squares   F-statistic:                     106.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.41e-27
-Time:                        00:20:28   Log-Likelihood:                 170.85
+Time:                        20:29:30   Log-Likelihood:                 170.85
 No. Observations:                 120   AIC:                            -335.7
 Df Residuals:                     117   BIC:                            -327.3
 Df Model:                           2                                         
@@ -504,7 +504,7 @@ Dep. Variable:                      y   R-squared:                       0.646
 Model:                            OLS   Adj. R-squared:                  0.640
 Method:                 Least Squares   F-statistic:                     106.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.93e-27
-Time:                        00:20:28   Log-Likelihood:                 170.09
+Time:                        20:29:30   Log-Likelihood:                 170.09
 No. Observations:                 120   AIC:                            -334.2
 Df Residuals:                     117   BIC:                            -325.8
 Df Model:                           2                                         
@@ -529,7 +529,7 @@ Dep. Variable:                      y   R-squared:                       0.645
 Model:                            OLS   Adj. R-squared:                  0.639
 Method:                 Least Squares   F-statistic:                     106.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.17e-27
-Time:                        00:20:28   Log-Likelihood:                 170.05
+Time:                        20:29:30   Log-Likelihood:                 170.05
 No. Observations:                 120   AIC:                            -334.1
 Df Residuals:                     117   BIC:                            -325.7
 Df Model:                           2                                         
@@ -554,7 +554,7 @@ Dep. Variable:                      y   R-squared:                       0.645
 Model:                            OLS   Adj. R-squared:                  0.639
 Method:                 Least Squares   F-statistic:                     106.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.66e-27
-Time:                        00:20:28   Log-Likelihood:                 170.11
+Time:                        20:29:30   Log-Likelihood:                 170.11
 No. Observations:                 120   AIC:                            -334.2
 Df Residuals:                     117   BIC:                            -325.9
 Df Model:                           2                                         
@@ -579,7 +579,7 @@ Dep. Variable:                      y   R-squared:                       0.644
 Model:                            OLS   Adj. R-squared:                  0.638
 Method:                 Least Squares   F-statistic:                     105.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.57e-27
-Time:                        00:20:28   Log-Likelihood:                 170.22
+Time:                        20:29:30   Log-Likelihood:                 170.22
 No. Observations:                 120   AIC:                            -334.4
 Df Residuals:                     117   BIC:                            -326.1
 Df Model:                           2                                         
@@ -604,7 +604,7 @@ Dep. Variable:                      y   R-squared:                       0.643
 Model:                            OLS   Adj. R-squared:                  0.637
 Method:                 Least Squares   F-statistic:                     105.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           6.92e-27
-Time:                        00:20:28   Log-Likelihood:                 170.02
+Time:                        20:29:30   Log-Likelihood:                 170.02
 No. Observations:                 120   AIC:                            -334.0
 Df Residuals:                     117   BIC:                            -325.7
 Df Model:                           2                                         
@@ -629,7 +629,7 @@ Dep. Variable:                      y   R-squared:                       0.643
 Model:                            OLS   Adj. R-squared:                  0.637
 Method:                 Least Squares   F-statistic:                     105.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           6.83e-27
-Time:                        00:20:28   Log-Likelihood:                 170.05
+Time:                        20:29:30   Log-Likelihood:                 170.05
 No. Observations:                 120   AIC:                            -334.1
 Df Residuals:                     117   BIC:                            -325.7
 Df Model:                           2                                         
@@ -654,7 +654,7 @@ Dep. Variable:                      y   R-squared:                       0.650
 Model:                            OLS   Adj. R-squared:                  0.644
 Method:                 Least Squares   F-statistic:                     108.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.98e-27
-Time:                        00:20:28   Log-Likelihood:                 171.33
+Time:                        20:29:30   Log-Likelihood:                 171.33
 No. Observations:                 120   AIC:                            -336.7
 Df Residuals:                     117   BIC:                            -328.3
 Df Model:                           2                                         
@@ -679,7 +679,7 @@ Dep. Variable:                      y   R-squared:                       0.652
 Model:                            OLS   Adj. R-squared:                  0.646
 Method:                 Least Squares   F-statistic:                     109.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.47e-27
-Time:                        00:20:28   Log-Likelihood:                 171.65
+Time:                        20:29:30   Log-Likelihood:                 171.65
 No. Observations:                 120   AIC:                            -337.3
 Df Residuals:                     117   BIC:                            -328.9
 Df Model:                           2                                         
@@ -704,7 +704,7 @@ Dep. Variable:                      y   R-squared:                       0.654
 Model:                            OLS   Adj. R-squared:                  0.649
 Method:                 Least Squares   F-statistic:                     110.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.01e-27
-Time:                        00:20:28   Log-Likelihood:                 171.62
+Time:                        20:29:30   Log-Likelihood:                 171.62
 No. Observations:                 120   AIC:                            -337.2
 Df Residuals:                     117   BIC:                            -328.9
 Df Model:                           2                                         
@@ -729,7 +729,7 @@ Dep. Variable:                      y   R-squared:                       0.652
 Model:                            OLS   Adj. R-squared:                  0.646
 Method:                 Least Squares   F-statistic:                     109.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.48e-27
-Time:                        00:20:28   Log-Likelihood:                 171.53
+Time:                        20:29:30   Log-Likelihood:                 171.53
 No. Observations:                 120   AIC:                            -337.1
 Df Residuals:                     117   BIC:                            -328.7
 Df Model:                           2                                         
@@ -754,7 +754,7 @@ Dep. Variable:                      y   R-squared:                       0.651
 Model:                            OLS   Adj. R-squared:                  0.645
 Method:                 Least Squares   F-statistic:                     108.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.94e-27
-Time:                        00:20:28   Log-Likelihood:                 172.39
+Time:                        20:29:30   Log-Likelihood:                 172.39
 No. Observations:                 120   AIC:                            -338.8
 Df Residuals:                     117   BIC:                            -330.4
 Df Model:                           2                                         
@@ -779,7 +779,7 @@ Dep. Variable:                      y   R-squared:                       0.655
 Model:                            OLS   Adj. R-squared:                  0.649
 Method:                 Least Squares   F-statistic:                     110.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.82e-28
-Time:                        00:20:28   Log-Likelihood:                 172.85
+Time:                        20:29:30   Log-Likelihood:                 172.85
 No. Observations:                 120   AIC:                            -339.7
 Df Residuals:                     117   BIC:                            -331.3
 Df Model:                           2                                         
@@ -804,7 +804,7 @@ Dep. Variable:                      y   R-squared:                       0.662
 Model:                            OLS   Adj. R-squared:                  0.656
 Method:                 Least Squares   F-statistic:                     114.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.80e-28
-Time:                        00:20:28   Log-Likelihood:                 173.48
+Time:                        20:29:30   Log-Likelihood:                 173.48
 No. Observations:                 120   AIC:                            -341.0
 Df Residuals:                     117   BIC:                            -332.6
 Df Model:                           2                                         
@@ -829,7 +829,7 @@ Dep. Variable:                      y   R-squared:                       0.662
 Model:                            OLS   Adj. R-squared:                  0.656
 Method:                 Least Squares   F-statistic:                     114.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.83e-28
-Time:                        00:20:28   Log-Likelihood:                 173.35
+Time:                        20:29:30   Log-Likelihood:                 173.35
 No. Observations:                 120   AIC:                            -340.7
 Df Residuals:                     117   BIC:                            -332.3
 Df Model:                           2                                         
@@ -854,7 +854,7 @@ Dep. Variable:                      y   R-squared:                       0.675
 Model:                            OLS   Adj. R-squared:                  0.670
 Method:                 Least Squares   F-statistic:                     121.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.72e-29
-Time:                        00:20:28   Log-Likelihood:                 175.83
+Time:                        20:29:30   Log-Likelihood:                 175.83
 No. Observations:                 120   AIC:                            -345.7
 Df Residuals:                     117   BIC:                            -337.3
 Df Model:                           2                                         
@@ -879,7 +879,7 @@ Dep. Variable:                      y   R-squared:                       0.660
 Model:                            OLS   Adj. R-squared:                  0.654
 Method:                 Least Squares   F-statistic:                     113.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.22e-28
-Time:                        00:20:28   Log-Likelihood:                 173.81
+Time:                        20:29:30   Log-Likelihood:                 173.81
 No. Observations:                 120   AIC:                            -341.6
 Df Residuals:                     117   BIC:                            -333.3
 Df Model:                           2                                         
@@ -904,7 +904,7 @@ Dep. Variable:                      y   R-squared:                       0.659
 Model:                            OLS   Adj. R-squared:                  0.653
 Method:                 Least Squares   F-statistic:                     112.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.82e-28
-Time:                        00:20:28   Log-Likelihood:                 173.80
+Time:                        20:29:30   Log-Likelihood:                 173.80
 No. Observations:                 120   AIC:                            -341.6
 Df Residuals:                     117   BIC:                            -333.2
 Df Model:                           2                                         
@@ -929,7 +929,7 @@ Dep. Variable:                      y   R-squared:                       0.662
 Model:                            OLS   Adj. R-squared:                  0.656
 Method:                 Least Squares   F-statistic:                     114.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.64e-28
-Time:                        00:20:28   Log-Likelihood:                 174.36
+Time:                        20:29:30   Log-Likelihood:                 174.36
 No. Observations:                 120   AIC:                            -342.7
 Df Residuals:                     117   BIC:                            -334.4
 Df Model:                           2                                         
@@ -954,7 +954,7 @@ Dep. Variable:                      y   R-squared:                       0.661
 Model:                            OLS   Adj. R-squared:                  0.656
 Method:                 Least Squares   F-statistic:                     114.2
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.10e-28
-Time:                        00:20:28   Log-Likelihood:                 174.45
+Time:                        20:29:30   Log-Likelihood:                 174.45
 No. Observations:                 120   AIC:                            -342.9
 Df Residuals:                     117   BIC:                            -334.5
 Df Model:                           2                                         
@@ -979,7 +979,7 @@ Dep. Variable:                      y   R-squared:                       0.650
 Model:                            OLS   Adj. R-squared:                  0.644
 Method:                 Least Squares   F-statistic:                     108.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.19e-27
-Time:                        00:20:28   Log-Likelihood:                 172.90
+Time:                        20:29:30   Log-Likelihood:                 172.90
 No. Observations:                 120   AIC:                            -339.8
 Df Residuals:                     117   BIC:                            -331.4
 Df Model:                           2                                         
@@ -1004,7 +1004,7 @@ Dep. Variable:                      y   R-squared:                       0.666
 Model:                            OLS   Adj. R-squared:                  0.660
 Method:                 Least Squares   F-statistic:                     116.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.46e-28
-Time:                        00:20:28   Log-Likelihood:                 173.25
+Time:                        20:29:30   Log-Likelihood:                 173.25
 No. Observations:                 120   AIC:                            -340.5
 Df Residuals:                     117   BIC:                            -332.1
 Df Model:                           2                                         
@@ -1029,7 +1029,7 @@ Dep. Variable:                      y   R-squared:                       0.669
 Model:                            OLS   Adj. R-squared:                  0.663
 Method:                 Least Squares   F-statistic:                     118.2
 Date:                Tue, 01 May 2018   Prob (F-statistic):           8.33e-29
-Time:                        00:20:28   Log-Likelihood:                 173.21
+Time:                        20:29:30   Log-Likelihood:                 173.21
 No. Observations:                 120   AIC:                            -340.4
 Df Residuals:                     117   BIC:                            -332.1
 Df Model:                           2                                         
@@ -1054,7 +1054,7 @@ Dep. Variable:                      y   R-squared:                       0.668
 Model:                            OLS   Adj. R-squared:                  0.662
 Method:                 Least Squares   F-statistic:                     117.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.74e-29
-Time:                        00:20:28   Log-Likelihood:                 173.19
+Time:                        20:29:30   Log-Likelihood:                 173.19
 No. Observations:                 120   AIC:                            -340.4
 Df Residuals:                     117   BIC:                            -332.0
 Df Model:                           2                                         
@@ -1079,7 +1079,7 @@ Dep. Variable:                      y   R-squared:                       0.672
 Model:                            OLS   Adj. R-squared:                  0.667
 Method:                 Least Squares   F-statistic:                     120.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.46e-29
-Time:                        00:20:28   Log-Likelihood:                 173.12
+Time:                        20:29:30   Log-Likelihood:                 173.12
 No. Observations:                 120   AIC:                            -340.2
 Df Residuals:                     117   BIC:                            -331.9
 Df Model:                           2                                         
@@ -1104,7 +1104,7 @@ Dep. Variable:                      y   R-squared:                       0.673
 Model:                            OLS   Adj. R-squared:                  0.667
 Method:                 Least Squares   F-statistic:                     120.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.97e-29
-Time:                        00:20:28   Log-Likelihood:                 172.74
+Time:                        20:29:30   Log-Likelihood:                 172.74
 No. Observations:                 120   AIC:                            -339.5
 Df Residuals:                     117   BIC:                            -331.1
 Df Model:                           2                                         
@@ -1129,7 +1129,7 @@ Dep. Variable:                      y   R-squared:                       0.682
 Model:                            OLS   Adj. R-squared:                  0.677
 Method:                 Least Squares   F-statistic:                     125.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           7.59e-30
-Time:                        00:20:28   Log-Likelihood:                 174.93
+Time:                        20:29:30   Log-Likelihood:                 174.93
 No. Observations:                 120   AIC:                            -343.9
 Df Residuals:                     117   BIC:                            -335.5
 Df Model:                           2                                         
@@ -1154,7 +1154,7 @@ Dep. Variable:                      y   R-squared:                       0.680
 Model:                            OLS   Adj. R-squared:                  0.674
 Method:                 Least Squares   F-statistic:                     124.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.20e-29
-Time:                        00:20:29   Log-Likelihood:                 174.06
+Time:                        20:29:30   Log-Likelihood:                 174.06
 No. Observations:                 120   AIC:                            -342.1
 Df Residuals:                     117   BIC:                            -333.8
 Df Model:                           2                                         
@@ -1179,7 +1179,7 @@ Dep. Variable:                      y   R-squared:                       0.693
 Model:                            OLS   Adj. R-squared:                  0.688
 Method:                 Least Squares   F-statistic:                     132.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.28e-31
-Time:                        00:20:29   Log-Likelihood:                 177.94
+Time:                        20:29:30   Log-Likelihood:                 177.94
 No. Observations:                 120   AIC:                            -349.9
 Df Residuals:                     117   BIC:                            -341.5
 Df Model:                           2                                         
@@ -1204,7 +1204,7 @@ Dep. Variable:                      y   R-squared:                       0.697
 Model:                            OLS   Adj. R-squared:                  0.691
 Method:                 Least Squares   F-statistic:                     134.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.95e-31
-Time:                        00:20:29   Log-Likelihood:                 178.42
+Time:                        20:29:31   Log-Likelihood:                 178.42
 No. Observations:                 120   AIC:                            -350.8
 Df Residuals:                     117   BIC:                            -342.5
 Df Model:                           2                                         
@@ -1229,7 +1229,7 @@ Dep. Variable:                      y   R-squared:                       0.691
 Model:                            OLS   Adj. R-squared:                  0.686
 Method:                 Least Squares   F-statistic:                     130.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.49e-30
-Time:                        00:20:29   Log-Likelihood:                 178.31
+Time:                        20:29:31   Log-Likelihood:                 178.31
 No. Observations:                 120   AIC:                            -350.6
 Df Residuals:                     117   BIC:                            -342.3
 Df Model:                           2                                         
@@ -1254,7 +1254,7 @@ Dep. Variable:                      y   R-squared:                       0.684
 Model:                            OLS   Adj. R-squared:                  0.679
 Method:                 Least Squares   F-statistic:                     126.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.33e-30
-Time:                        00:20:29   Log-Likelihood:                 178.45
+Time:                        20:29:31   Log-Likelihood:                 178.45
 No. Observations:                 120   AIC:                            -350.9
 Df Residuals:                     117   BIC:                            -342.5
 Df Model:                           2                                         
@@ -1279,7 +1279,7 @@ Dep. Variable:                      y   R-squared:                       0.687
 Model:                            OLS   Adj. R-squared:                  0.682
 Method:                 Least Squares   F-statistic:                     128.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.93e-30
-Time:                        00:20:29   Log-Likelihood:                 179.47
+Time:                        20:29:31   Log-Likelihood:                 179.47
 No. Observations:                 120   AIC:                            -352.9
 Df Residuals:                     117   BIC:                            -344.6
 Df Model:                           2                                         
@@ -1304,7 +1304,7 @@ Dep. Variable:                      y   R-squared:                       0.691
 Model:                            OLS   Adj. R-squared:                  0.685
 Method:                 Least Squares   F-statistic:                     130.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.57e-30
-Time:                        00:20:29   Log-Likelihood:                 179.37
+Time:                        20:29:31   Log-Likelihood:                 179.37
 No. Observations:                 120   AIC:                            -352.7
 Df Residuals:                     117   BIC:                            -344.4
 Df Model:                           2                                         
@@ -1329,7 +1329,7 @@ Dep. Variable:                      y   R-squared:                       0.698
 Model:                            OLS   Adj. R-squared:                  0.693
 Method:                 Least Squares   F-statistic:                     135.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.02e-31
-Time:                        00:20:29   Log-Likelihood:                 181.05
+Time:                        20:29:31   Log-Likelihood:                 181.05
 No. Observations:                 120   AIC:                            -356.1
 Df Residuals:                     117   BIC:                            -347.7
 Df Model:                           2                                         
@@ -1354,7 +1354,7 @@ Dep. Variable:                      y   R-squared:                       0.699
 Model:                            OLS   Adj. R-squared:                  0.694
 Method:                 Least Squares   F-statistic:                     135.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.29e-31
-Time:                        00:20:29   Log-Likelihood:                 180.99
+Time:                        20:29:31   Log-Likelihood:                 180.99
 No. Observations:                 120   AIC:                            -356.0
 Df Residuals:                     117   BIC:                            -347.6
 Df Model:                           2                                         
@@ -1379,7 +1379,7 @@ Dep. Variable:                      y   R-squared:                       0.705
 Model:                            OLS   Adj. R-squared:                  0.700
 Method:                 Least Squares   F-statistic:                     139.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.91e-32
-Time:                        00:20:29   Log-Likelihood:                 183.91
+Time:                        20:29:31   Log-Likelihood:                 183.91
 No. Observations:                 120   AIC:                            -361.8
 Df Residuals:                     117   BIC:                            -353.4
 Df Model:                           2                                         
@@ -1404,7 +1404,7 @@ Dep. Variable:                      y   R-squared:                       0.703
 Model:                            OLS   Adj. R-squared:                  0.698
 Method:                 Least Squares   F-statistic:                     138.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.50e-31
-Time:                        00:20:29   Log-Likelihood:                 183.32
+Time:                        20:29:31   Log-Likelihood:                 183.32
 No. Observations:                 120   AIC:                            -360.6
 Df Residuals:                     117   BIC:                            -352.3
 Df Model:                           2                                         
@@ -1429,7 +1429,7 @@ Dep. Variable:                      y   R-squared:                       0.704
 Model:                            OLS   Adj. R-squared:                  0.699
 Method:                 Least Squares   F-statistic:                     139.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.20e-31
-Time:                        00:20:29   Log-Likelihood:                 183.26
+Time:                        20:29:31   Log-Likelihood:                 183.26
 No. Observations:                 120   AIC:                            -360.5
 Df Residuals:                     117   BIC:                            -352.2
 Df Model:                           2                                         
@@ -1454,7 +1454,7 @@ Dep. Variable:                      y   R-squared:                       0.700
 Model:                            OLS   Adj. R-squared:                  0.695
 Method:                 Least Squares   F-statistic:                     136.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.74e-31
-Time:                        00:20:29   Log-Likelihood:                 181.30
+Time:                        20:29:31   Log-Likelihood:                 181.30
 No. Observations:                 120   AIC:                            -356.6
 Df Residuals:                     117   BIC:                            -348.2
 Df Model:                           2                                         
@@ -1479,7 +1479,7 @@ Dep. Variable:                      y   R-squared:                       0.705
 Model:                            OLS   Adj. R-squared:                  0.700
 Method:                 Least Squares   F-statistic:                     140.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           8.78e-32
-Time:                        00:20:29   Log-Likelihood:                 182.39
+Time:                        20:29:31   Log-Likelihood:                 182.39
 No. Observations:                 120   AIC:                            -358.8
 Df Residuals:                     117   BIC:                            -350.4
 Df Model:                           2                                         
@@ -1504,7 +1504,7 @@ Dep. Variable:                      y   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.708
 Method:                 Least Squares   F-statistic:                     144.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.17e-32
-Time:                        00:20:29   Log-Likelihood:                 182.40
+Time:                        20:29:31   Log-Likelihood:                 182.40
 No. Observations:                 120   AIC:                            -358.8
 Df Residuals:                     117   BIC:                            -350.4
 Df Model:                           2                                         
@@ -1529,7 +1529,7 @@ Dep. Variable:                      y   R-squared:                       0.720
 Model:                            OLS   Adj. R-squared:                  0.715
 Method:                 Least Squares   F-statistic:                     150.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.59e-33
-Time:                        00:20:29   Log-Likelihood:                 183.80
+Time:                        20:29:31   Log-Likelihood:                 183.80
 No. Observations:                 120   AIC:                            -361.6
 Df Residuals:                     117   BIC:                            -353.2
 Df Model:                           2                                         
@@ -1554,7 +1554,7 @@ Dep. Variable:                      y   R-squared:                       0.720
 Model:                            OLS   Adj. R-squared:                  0.715
 Method:                 Least Squares   F-statistic:                     150.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.55e-33
-Time:                        00:20:29   Log-Likelihood:                 183.64
+Time:                        20:29:31   Log-Likelihood:                 183.64
 No. Observations:                 120   AIC:                            -361.3
 Df Residuals:                     117   BIC:                            -352.9
 Df Model:                           2                                         
@@ -1579,7 +1579,7 @@ Dep. Variable:                      y   R-squared:                       0.719
 Model:                            OLS   Adj. R-squared:                  0.714
 Method:                 Least Squares   F-statistic:                     149.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.38e-33
-Time:                        00:20:29   Log-Likelihood:                 184.07
+Time:                        20:29:31   Log-Likelihood:                 184.07
 No. Observations:                 120   AIC:                            -362.1
 Df Residuals:                     117   BIC:                            -353.8
 Df Model:                           2                                         
@@ -1604,7 +1604,7 @@ Dep. Variable:                      y   R-squared:                       0.719
 Model:                            OLS   Adj. R-squared:                  0.714
 Method:                 Least Squares   F-statistic:                     149.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.33e-33
-Time:                        00:20:29   Log-Likelihood:                 184.11
+Time:                        20:29:31   Log-Likelihood:                 184.11
 No. Observations:                 120   AIC:                            -362.2
 Df Residuals:                     117   BIC:                            -353.8
 Df Model:                           2                                         
@@ -1629,7 +1629,7 @@ Dep. Variable:                      y   R-squared:                       0.723
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     153.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.18e-33
-Time:                        00:20:29   Log-Likelihood:                 184.91
+Time:                        20:29:31   Log-Likelihood:                 184.91
 No. Observations:                 120   AIC:                            -363.8
 Df Residuals:                     117   BIC:                            -355.5
 Df Model:                           2                                         
@@ -1654,7 +1654,7 @@ Dep. Variable:                      y   R-squared:                       0.723
 Model:                            OLS   Adj. R-squared:                  0.718
 Method:                 Least Squares   F-statistic:                     152.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.36e-33
-Time:                        00:20:29   Log-Likelihood:                 185.19
+Time:                        20:29:31   Log-Likelihood:                 185.19
 No. Observations:                 120   AIC:                            -364.4
 Df Residuals:                     117   BIC:                            -356.0
 Df Model:                           2                                         
@@ -1679,7 +1679,7 @@ Dep. Variable:                      y   R-squared:                       0.727
 Model:                            OLS   Adj. R-squared:                  0.722
 Method:                 Least Squares   F-statistic:                     155.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.15e-33
-Time:                        00:20:29   Log-Likelihood:                 185.94
+Time:                        20:29:31   Log-Likelihood:                 185.94
 No. Observations:                 120   AIC:                            -365.9
 Df Residuals:                     117   BIC:                            -357.5
 Df Model:                           2                                         
@@ -1704,7 +1704,7 @@ Dep. Variable:                      y   R-squared:                       0.726
 Model:                            OLS   Adj. R-squared:                  0.721
 Method:                 Least Squares   F-statistic:                     154.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.31e-33
-Time:                        00:20:29   Log-Likelihood:                 186.08
+Time:                        20:29:31   Log-Likelihood:                 186.08
 No. Observations:                 120   AIC:                            -366.2
 Df Residuals:                     117   BIC:                            -357.8
 Df Model:                           2                                         
@@ -1729,7 +1729,7 @@ Dep. Variable:                      y   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.725
 Method:                 Least Squares   F-statistic:                     157.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.96e-34
-Time:                        00:20:29   Log-Likelihood:                 186.72
+Time:                        20:29:31   Log-Likelihood:                 186.72
 No. Observations:                 120   AIC:                            -367.4
 Df Residuals:                     117   BIC:                            -359.1
 Df Model:                           2                                         
@@ -1754,7 +1754,7 @@ Dep. Variable:                      y   R-squared:                       0.730
 Model:                            OLS   Adj. R-squared:                  0.726
 Method:                 Least Squares   F-statistic:                     158.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.26e-34
-Time:                        00:20:29   Log-Likelihood:                 186.92
+Time:                        20:29:31   Log-Likelihood:                 186.92
 No. Observations:                 120   AIC:                            -367.8
 Df Residuals:                     117   BIC:                            -359.5
 Df Model:                           2                                         
@@ -1779,7 +1779,7 @@ Dep. Variable:                      y   R-squared:                       0.723
 Model:                            OLS   Adj. R-squared:                  0.718
 Method:                 Least Squares   F-statistic:                     152.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.66e-33
-Time:                        00:20:29   Log-Likelihood:                 187.70
+Time:                        20:29:31   Log-Likelihood:                 187.70
 No. Observations:                 120   AIC:                            -369.4
 Df Residuals:                     117   BIC:                            -361.0
 Df Model:                           2                                         
@@ -1804,7 +1804,7 @@ Dep. Variable:                      y   R-squared:                       0.725
 Model:                            OLS   Adj. R-squared:                  0.720
 Method:                 Least Squares   F-statistic:                     154.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.53e-33
-Time:                        00:20:29   Log-Likelihood:                 188.06
+Time:                        20:29:31   Log-Likelihood:                 188.06
 No. Observations:                 120   AIC:                            -370.1
 Df Residuals:                     117   BIC:                            -361.8
 Df Model:                           2                                         
@@ -1829,7 +1829,7 @@ Dep. Variable:                      y   R-squared:                       0.721
 Model:                            OLS   Adj. R-squared:                  0.716
 Method:                 Least Squares   F-statistic:                     150.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.98e-33
-Time:                        00:20:29   Log-Likelihood:                 187.26
+Time:                        20:29:31   Log-Likelihood:                 187.26
 No. Observations:                 120   AIC:                            -368.5
 Df Residuals:                     117   BIC:                            -360.2
 Df Model:                           2                                         
@@ -1854,7 +1854,7 @@ Dep. Variable:                      y   R-squared:                       0.722
 Model:                            OLS   Adj. R-squared:                  0.717
 Method:                 Least Squares   F-statistic:                     151.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.33e-33
-Time:                        00:20:29   Log-Likelihood:                 187.44
+Time:                        20:29:31   Log-Likelihood:                 187.44
 No. Observations:                 120   AIC:                            -368.9
 Df Residuals:                     117   BIC:                            -360.5
 Df Model:                           2                                         
@@ -1879,7 +1879,7 @@ Dep. Variable:                      y   R-squared:                       0.725
 Model:                            OLS   Adj. R-squared:                  0.720
 Method:                 Least Squares   F-statistic:                     154.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.71e-33
-Time:                        00:20:29   Log-Likelihood:                 187.12
+Time:                        20:29:31   Log-Likelihood:                 187.12
 No. Observations:                 120   AIC:                            -368.2
 Df Residuals:                     117   BIC:                            -359.9
 Df Model:                           2                                         
@@ -1904,7 +1904,7 @@ Dep. Variable:                      y   R-squared:                       0.724
 Model:                            OLS   Adj. R-squared:                  0.719
 Method:                 Least Squares   F-statistic:                     153.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.94e-33
-Time:                        00:20:29   Log-Likelihood:                 186.50
+Time:                        20:29:31   Log-Likelihood:                 186.50
 No. Observations:                 120   AIC:                            -367.0
 Df Residuals:                     117   BIC:                            -358.6
 Df Model:                           2                                         
@@ -1929,7 +1929,7 @@ Dep. Variable:                      y   R-squared:                       0.724
 Model:                            OLS   Adj. R-squared:                  0.720
 Method:                 Least Squares   F-statistic:                     153.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.77e-33
-Time:                        00:20:29   Log-Likelihood:                 186.59
+Time:                        20:29:31   Log-Likelihood:                 186.59
 No. Observations:                 120   AIC:                            -367.2
 Df Residuals:                     117   BIC:                            -358.8
 Df Model:                           2                                         
@@ -1954,7 +1954,7 @@ Dep. Variable:                      y   R-squared:                       0.725
 Model:                            OLS   Adj. R-squared:                  0.720
 Method:                 Least Squares   F-statistic:                     154.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.71e-33
-Time:                        00:20:29   Log-Likelihood:                 186.65
+Time:                        20:29:31   Log-Likelihood:                 186.65
 No. Observations:                 120   AIC:                            -367.3
 Df Residuals:                     117   BIC:                            -358.9
 Df Model:                           2                                         
@@ -1979,7 +1979,7 @@ Dep. Variable:                      y   R-squared:                       0.726
 Model:                            OLS   Adj. R-squared:                  0.721
 Method:                 Least Squares   F-statistic:                     154.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.40e-33
-Time:                        00:20:29   Log-Likelihood:                 186.89
+Time:                        20:29:31   Log-Likelihood:                 186.89
 No. Observations:                 120   AIC:                            -367.8
 Df Residuals:                     117   BIC:                            -359.4
 Df Model:                           2                                         
@@ -2004,7 +2004,7 @@ Dep. Variable:                      y   R-squared:                       0.721
 Model:                            OLS   Adj. R-squared:                  0.716
 Method:                 Least Squares   F-statistic:                     150.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.94e-33
-Time:                        00:20:29   Log-Likelihood:                 185.95
+Time:                        20:29:31   Log-Likelihood:                 185.95
 No. Observations:                 120   AIC:                            -365.9
 Df Residuals:                     117   BIC:                            -357.5
 Df Model:                           2                                         
@@ -2029,7 +2029,7 @@ Dep. Variable:                      y   R-squared:                       0.722
 Model:                            OLS   Adj. R-squared:                  0.717
 Method:                 Least Squares   F-statistic:                     151.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.19e-33
-Time:                        00:20:29   Log-Likelihood:                 186.07
+Time:                        20:29:31   Log-Likelihood:                 186.07
 No. Observations:                 120   AIC:                            -366.1
 Df Residuals:                     117   BIC:                            -357.8
 Df Model:                           2                                         
@@ -2054,7 +2054,7 @@ Dep. Variable:                      y   R-squared:                       0.705
 Model:                            OLS   Adj. R-squared:                  0.700
 Method:                 Least Squares   F-statistic:                     139.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.66e-32
-Time:                        00:20:29   Log-Likelihood:                 181.69
+Time:                        20:29:31   Log-Likelihood:                 181.69
 No. Observations:                 120   AIC:                            -357.4
 Df Residuals:                     117   BIC:                            -349.0
 Df Model:                           2                                         
@@ -2079,7 +2079,7 @@ Dep. Variable:                      y   R-squared:                       0.709
 Model:                            OLS   Adj. R-squared:                  0.704
 Method:                 Least Squares   F-statistic:                     142.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.27e-32
-Time:                        00:20:29   Log-Likelihood:                 183.11
+Time:                        20:29:31   Log-Likelihood:                 183.11
 No. Observations:                 120   AIC:                            -360.2
 Df Residuals:                     117   BIC:                            -351.9
 Df Model:                           2                                         
@@ -2104,7 +2104,7 @@ Dep. Variable:                      y   R-squared:                       0.711
 Model:                            OLS   Adj. R-squared:                  0.706
 Method:                 Least Squares   F-statistic:                     144.2
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.69e-32
-Time:                        00:20:29   Log-Likelihood:                 183.04
+Time:                        20:29:31   Log-Likelihood:                 183.04
 No. Observations:                 120   AIC:                            -360.1
 Df Residuals:                     117   BIC:                            -351.7
 Df Model:                           2                                         
@@ -2129,7 +2129,7 @@ Dep. Variable:                      y   R-squared:                       0.710
 Model:                            OLS   Adj. R-squared:                  0.705
 Method:                 Least Squares   F-statistic:                     142.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.91e-32
-Time:                        00:20:29   Log-Likelihood:                 180.70
+Time:                        20:29:31   Log-Likelihood:                 180.70
 No. Observations:                 120   AIC:                            -355.4
 Df Residuals:                     117   BIC:                            -347.0
 Df Model:                           2                                         
@@ -2154,7 +2154,7 @@ Dep. Variable:                      y   R-squared:                       0.710
 Model:                            OLS   Adj. R-squared:                  0.705
 Method:                 Least Squares   F-statistic:                     143.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.78e-32
-Time:                        00:20:29   Log-Likelihood:                 180.69
+Time:                        20:29:31   Log-Likelihood:                 180.69
 No. Observations:                 120   AIC:                            -355.4
 Df Residuals:                     117   BIC:                            -347.0
 Df Model:                           2                                         
@@ -2179,7 +2179,7 @@ Dep. Variable:                      y   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.708
 Method:                 Least Squares   F-statistic:                     145.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.15e-32
-Time:                        00:20:29   Log-Likelihood:                 181.23
+Time:                        20:29:31   Log-Likelihood:                 181.23
 No. Observations:                 120   AIC:                            -356.5
 Df Residuals:                     117   BIC:                            -348.1
 Df Model:                           2                                         
@@ -2204,7 +2204,7 @@ Dep. Variable:                      y   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.707
 Method:                 Least Squares   F-statistic:                     144.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.41e-32
-Time:                        00:20:29   Log-Likelihood:                 181.93
+Time:                        20:29:31   Log-Likelihood:                 181.93
 No. Observations:                 120   AIC:                            -357.9
 Df Residuals:                     117   BIC:                            -349.5
 Df Model:                           2                                         
@@ -2229,7 +2229,7 @@ Dep. Variable:                      y   R-squared:                       0.714
 Model:                            OLS   Adj. R-squared:                  0.709
 Method:                 Least Squares   F-statistic:                     146.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.58e-32
-Time:                        00:20:29   Log-Likelihood:                 182.30
+Time:                        20:29:31   Log-Likelihood:                 182.30
 No. Observations:                 120   AIC:                            -358.6
 Df Residuals:                     117   BIC:                            -350.2
 Df Model:                           2                                         
@@ -2254,7 +2254,7 @@ Dep. Variable:                      y   R-squared:                       0.712
 Model:                            OLS   Adj. R-squared:                  0.707
 Method:                 Least Squares   F-statistic:                     144.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.48e-32
-Time:                        00:20:29   Log-Likelihood:                 182.25
+Time:                        20:29:31   Log-Likelihood:                 182.25
 No. Observations:                 120   AIC:                            -358.5
 Df Residuals:                     117   BIC:                            -350.1
 Df Model:                           2                                         
@@ -2279,7 +2279,7 @@ Dep. Variable:                      y   R-squared:                       0.710
 Model:                            OLS   Adj. R-squared:                  0.705
 Method:                 Least Squares   F-statistic:                     143.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.31e-32
-Time:                        00:20:29   Log-Likelihood:                 182.46
+Time:                        20:29:31   Log-Likelihood:                 182.46
 No. Observations:                 120   AIC:                            -358.9
 Df Residuals:                     117   BIC:                            -350.5
 Df Model:                           2                                         
@@ -2304,7 +2304,7 @@ Dep. Variable:                      y   R-squared:                       0.701
 Model:                            OLS   Adj. R-squared:                  0.695
 Method:                 Least Squares   F-statistic:                     136.9
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.29e-31
-Time:                        00:20:29   Log-Likelihood:                 178.30
+Time:                        20:29:31   Log-Likelihood:                 178.30
 No. Observations:                 120   AIC:                            -350.6
 Df Residuals:                     117   BIC:                            -342.2
 Df Model:                           2                                         
@@ -2329,7 +2329,7 @@ Dep. Variable:                      y   R-squared:                       0.702
 Model:                            OLS   Adj. R-squared:                  0.697
 Method:                 Least Squares   F-statistic:                     137.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.83e-31
-Time:                        00:20:29   Log-Likelihood:                 178.65
+Time:                        20:29:31   Log-Likelihood:                 178.65
 No. Observations:                 120   AIC:                            -351.3
 Df Residuals:                     117   BIC:                            -342.9
 Df Model:                           2                                         
@@ -2354,7 +2354,7 @@ Dep. Variable:                      y   R-squared:                       0.689
 Model:                            OLS   Adj. R-squared:                  0.683
 Method:                 Least Squares   F-statistic:                     129.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.33e-30
-Time:                        00:20:29   Log-Likelihood:                 173.99
+Time:                        20:29:31   Log-Likelihood:                 173.99
 No. Observations:                 120   AIC:                            -342.0
 Df Residuals:                     117   BIC:                            -333.6
 Df Model:                           2                                         
@@ -2379,7 +2379,7 @@ Dep. Variable:                      y   R-squared:                       0.687
 Model:                            OLS   Adj. R-squared:                  0.682
 Method:                 Least Squares   F-statistic:                     128.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.03e-30
-Time:                        00:20:29   Log-Likelihood:                 173.94
+Time:                        20:29:31   Log-Likelihood:                 173.94
 No. Observations:                 120   AIC:                            -341.9
 Df Residuals:                     117   BIC:                            -333.5
 Df Model:                           2                                         
@@ -2404,7 +2404,7 @@ Dep. Variable:                      y   R-squared:                       0.689
 Model:                            OLS   Adj. R-squared:                  0.684
 Method:                 Least Squares   F-statistic:                     129.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.11e-30
-Time:                        00:20:29   Log-Likelihood:                 173.12
+Time:                        20:29:31   Log-Likelihood:                 173.12
 No. Observations:                 120   AIC:                            -340.2
 Df Residuals:                     117   BIC:                            -331.9
 Df Model:                           2                                         
@@ -2429,7 +2429,7 @@ Dep. Variable:                      y   R-squared:                       0.693
 Model:                            OLS   Adj. R-squared:                  0.687
 Method:                 Least Squares   F-statistic:                     131.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.06e-30
-Time:                        00:20:29   Log-Likelihood:                 173.33
+Time:                        20:29:31   Log-Likelihood:                 173.33
 No. Observations:                 120   AIC:                            -340.7
 Df Residuals:                     117   BIC:                            -332.3
 Df Model:                           2                                         
@@ -2454,7 +2454,7 @@ Dep. Variable:                      y   R-squared:                       0.695
 Model:                            OLS   Adj. R-squared:                  0.689
 Method:                 Least Squares   F-statistic:                     133.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           7.44e-31
-Time:                        00:20:29   Log-Likelihood:                 172.95
+Time:                        20:29:31   Log-Likelihood:                 172.95
 No. Observations:                 120   AIC:                            -339.9
 Df Residuals:                     117   BIC:                            -331.5
 Df Model:                           2                                         
@@ -2479,7 +2479,7 @@ Dep. Variable:                      y   R-squared:                       0.695
 Model:                            OLS   Adj. R-squared:                  0.689
 Method:                 Least Squares   F-statistic:                     133.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           7.25e-31
-Time:                        00:20:29   Log-Likelihood:                 172.97
+Time:                        20:29:31   Log-Likelihood:                 172.97
 No. Observations:                 120   AIC:                            -339.9
 Df Residuals:                     117   BIC:                            -331.6
 Df Model:                           2                                         
@@ -2504,7 +2504,7 @@ Dep. Variable:                      y   R-squared:                       0.694
 Model:                            OLS   Adj. R-squared:                  0.689
 Method:                 Least Squares   F-statistic:                     132.6
 Date:                Tue, 01 May 2018   Prob (F-statistic):           8.36e-31
-Time:                        00:20:29   Log-Likelihood:                 173.15
+Time:                        20:29:31   Log-Likelihood:                 173.15
 No. Observations:                 120   AIC:                            -340.3
 Df Residuals:                     117   BIC:                            -331.9
 Df Model:                           2                                         
@@ -2529,7 +2529,7 @@ Dep. Variable:                      y   R-squared:                       0.694
 Model:                            OLS   Adj. R-squared:                  0.688
 Method:                 Least Squares   F-statistic:                     132.5
 Date:                Tue, 01 May 2018   Prob (F-statistic):           8.76e-31
-Time:                        00:20:29   Log-Likelihood:                 173.35
+Time:                        20:29:31   Log-Likelihood:                 173.35
 No. Observations:                 120   AIC:                            -340.7
 Df Residuals:                     117   BIC:                            -332.3
 Df Model:                           2                                         
@@ -2554,7 +2554,7 @@ Dep. Variable:                      y   R-squared:                       0.693
 Model:                            OLS   Adj. R-squared:                  0.688
 Method:                 Least Squares   F-statistic:                     132.2
 Date:                Tue, 01 May 2018   Prob (F-statistic):           9.37e-31
-Time:                        00:20:29   Log-Likelihood:                 173.47
+Time:                        20:29:31   Log-Likelihood:                 173.47
 No. Observations:                 120   AIC:                            -340.9
 Df Residuals:                     117   BIC:                            -332.6
 Df Model:                           2                                         
@@ -2579,7 +2579,7 @@ Dep. Variable:                      y   R-squared:                       0.694
 Model:                            OLS   Adj. R-squared:                  0.689
 Method:                 Least Squares   F-statistic:                     133.0
 Date:                Tue, 01 May 2018   Prob (F-statistic):           7.54e-31
-Time:                        00:20:29   Log-Likelihood:                 172.99
+Time:                        20:29:31   Log-Likelihood:                 172.99
 No. Observations:                 120   AIC:                            -340.0
 Df Residuals:                     117   BIC:                            -331.6
 Df Model:                           2                                         
@@ -2604,7 +2604,7 @@ Dep. Variable:                      y   R-squared:                       0.690
 Model:                            OLS   Adj. R-squared:                  0.685
 Method:                 Least Squares   F-statistic:                     130.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.71e-30
-Time:                        00:20:29   Log-Likelihood:                 172.14
+Time:                        20:29:31   Log-Likelihood:                 172.14
 No. Observations:                 120   AIC:                            -338.3
 Df Residuals:                     117   BIC:                            -329.9
 Df Model:                           2                                         
@@ -2629,7 +2629,7 @@ Dep. Variable:                      y   R-squared:                       0.690
 Model:                            OLS   Adj. R-squared:                  0.685
 Method:                 Least Squares   F-statistic:                     130.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.68e-30
-Time:                        00:20:29   Log-Likelihood:                 172.15
+Time:                        20:29:31   Log-Likelihood:                 172.15
 No. Observations:                 120   AIC:                            -338.3
 Df Residuals:                     117   BIC:                            -329.9
 Df Model:                           2                                         
@@ -2654,7 +2654,7 @@ Dep. Variable:                      y   R-squared:                       0.690
 Model:                            OLS   Adj. R-squared:                  0.685
 Method:                 Least Squares   F-statistic:                     130.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.82e-30
-Time:                        00:20:29   Log-Likelihood:                 172.03
+Time:                        20:29:31   Log-Likelihood:                 172.03
 No. Observations:                 120   AIC:                            -338.1
 Df Residuals:                     117   BIC:                            -329.7
 Df Model:                           2                                         
@@ -2679,7 +2679,7 @@ Dep. Variable:                      y   R-squared:                       0.689
 Model:                            OLS   Adj. R-squared:                  0.684
 Method:                 Least Squares   F-statistic:                     129.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           2.09e-30
-Time:                        00:20:29   Log-Likelihood:                 171.93
+Time:                        20:29:31   Log-Likelihood:                 171.93
 No. Observations:                 120   AIC:                            -337.9
 Df Residuals:                     117   BIC:                            -329.5
 Df Model:                           2                                         
@@ -2704,7 +2704,7 @@ Dep. Variable:                      y   R-squared:                       0.689
 Model:                            OLS   Adj. R-squared:                  0.684
 Method:                 Least Squares   F-statistic:                     129.8
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.97e-30
-Time:                        00:20:29   Log-Likelihood:                 171.99
+Time:                        20:29:31   Log-Likelihood:                 171.99
 No. Observations:                 120   AIC:                            -338.0
 Df Residuals:                     117   BIC:                            -329.6
 Df Model:                           2                                         
@@ -2729,7 +2729,7 @@ Dep. Variable:                      y   R-squared:                       0.692
 Model:                            OLS   Adj. R-squared:                  0.687
 Method:                 Least Squares   F-statistic:                     131.4
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.21e-30
-Time:                        00:20:29   Log-Likelihood:                 172.12
+Time:                        20:29:31   Log-Likelihood:                 172.12
 No. Observations:                 120   AIC:                            -338.2
 Df Residuals:                     117   BIC:                            -329.9
 Df Model:                           2                                         
@@ -2754,7 +2754,7 @@ Dep. Variable:                      y   R-squared:                       0.696
 Model:                            OLS   Adj. R-squared:                  0.691
 Method:                 Least Squares   F-statistic:                     134.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           5.39e-31
-Time:                        00:20:29   Log-Likelihood:                 173.17
+Time:                        20:29:31   Log-Likelihood:                 173.17
 No. Observations:                 120   AIC:                            -340.3
 Df Residuals:                     117   BIC:                            -332.0
 Df Model:                           2                                         
@@ -2779,7 +2779,7 @@ Dep. Variable:                      y   R-squared:                       0.699
 Model:                            OLS   Adj. R-squared:                  0.694
 Method:                 Least Squares   F-statistic:                     135.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.33e-31
-Time:                        00:20:29   Log-Likelihood:                 173.63
+Time:                        20:29:31   Log-Likelihood:                 173.63
 No. Observations:                 120   AIC:                            -341.3
 Df Residuals:                     117   BIC:                            -332.9
 Df Model:                           2                                         
@@ -2804,7 +2804,7 @@ Dep. Variable:                      y   R-squared:                       0.690
 Model:                            OLS   Adj. R-squared:                  0.685
 Method:                 Least Squares   F-statistic:                     130.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.73e-30
-Time:                        00:20:29   Log-Likelihood:                 174.43
+Time:                        20:29:31   Log-Likelihood:                 174.43
 No. Observations:                 120   AIC:                            -342.9
 Df Residuals:                     117   BIC:                            -334.5
 Df Model:                           2                                         
@@ -2829,7 +2829,7 @@ Dep. Variable:                      y   R-squared:                       0.686
 Model:                            OLS   Adj. R-squared:                  0.681
 Method:                 Least Squares   F-statistic:                     128.1
 Date:                Tue, 01 May 2018   Prob (F-statistic):           3.42e-30
-Time:                        00:20:29   Log-Likelihood:                 174.30
+Time:                        20:29:31   Log-Likelihood:                 174.30
 No. Observations:                 120   AIC:                            -342.6
 Df Residuals:                     117   BIC:                            -334.2
 Df Model:                           2                                         
@@ -2854,7 +2854,7 @@ Dep. Variable:                      y   R-squared:                       0.685
 Model:                            OLS   Adj. R-squared:                  0.680
 Method:                 Least Squares   F-statistic:                     127.3
 Date:                Tue, 01 May 2018   Prob (F-statistic):           4.38e-30
-Time:                        00:20:29   Log-Likelihood:                 174.40
+Time:                        20:29:31   Log-Likelihood:                 174.40
 No. Observations:                 120   AIC:                            -342.8
 Df Residuals:                     117   BIC:                            -334.4
 Df Model:                           2                                         
@@ -2879,7 +2879,7 @@ Dep. Variable:                      y   R-squared:                       0.691
 Model:                            OLS   Adj. R-squared:                  0.686
 Method:                 Least Squares   F-statistic:                     130.7
 Date:                Tue, 01 May 2018   Prob (F-statistic):           1.51e-30
-Time:                        00:20:29   Log-Likelihood:                 175.44
+Time:                        20:29:31   Log-Likelihood:                 175.44
 No. Observations:                 120   AIC:                            -344.9
 Df Residuals:                     117   BIC:                            -336.5
 Df Model:                           2                                         
