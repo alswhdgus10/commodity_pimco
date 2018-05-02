@@ -32,7 +32,7 @@ snp_500_ret = (snp_500/snp_500.shift(1)-1)
 pet_CI = pd.DataFrame(origin['SPXGS_PTRM']).reset_index(drop=True)
 gold_CI = pd.DataFrame(origin['SPXGS_GTRM']).reset_index(drop=True)
 Spx = pd.DataFrame(origin['S&P500']).reset_index(drop=True)
-rf = pd.DataFrame(origin['LIBOR_3M'].fillna(0)/1200).reset_index(drop=True)
+rf = pd.DataFrame(origin['TBILL3M'].fillna(0)/1200).reset_index(drop=True)
 
 date_index = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080630':'20180228']
 #%% Gold Index 모멘텀 스코어 
@@ -487,6 +487,6 @@ minm_MM = Mimic_PF_ret.sort_values(by=0).reset_index(drop=True)
 minm_Oil = VW_OIL_result.sort_values(by=0).reset_index(drop=True)
 minm_Gold = VW_GOLD_result.sort_values(by=0).reset_index(drop=True)
 
-print ("Skew MM : ",pd.DataFrame(minm_MM[0][10:]).skew())
-print ("Skew Oil : ",pd.DataFrame(minm_Oil[0][:]).skew())
-print ("Skew Gold : ",pd.DataFrame(minm_Gold[0][10:]).skew())
+print ("Skew MM : ",pd.DataFrame(minm_MM[0][10:]).skew()[0])
+print ("Skew Oil : ",pd.DataFrame(minm_Oil[0][:]).skew()[0])
+print ("Skew Gold : ",pd.DataFrame(minm_Gold[0][10:]).skew()[0])
