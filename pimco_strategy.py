@@ -192,7 +192,7 @@ plt.legend(loc=2, prop={'size': 7})
 plt.title('Replicating NRE : rolling betas using 120 monthly observations')
 plt.ylabel('beta')
 plt.xlabel('time(Y)')
-plt.savefig('result/1.jpg')
+plt.savefig('result/1.jpg', dpi = 300)
 plt.close()
 
 
@@ -212,7 +212,7 @@ plt.legend(loc=2, prop={'size': 10})
 plt.title('Growth of a dollar for replicating portfolio and NRE portfolio')
 plt.ylabel('Growth of a dollar($)')
 plt.xlabel('time(Y)')
-plt.savefig('result/2.jpg')
+plt.savefig('result/2.jpg', dpi = 300)
 plt.close()
 
 fig = plt.figure(3)
@@ -226,7 +226,7 @@ plt.legend(loc=2, prop={'size': 7})
 plt.title('Monthly Return of NRE and replicating portfolio')
 plt.ylabel('return')
 plt.xlabel('time(Y)')
-plt.savefig('result/3.jpg')
+plt.savefig('result/3.jpg', dpi = 300)
 plt.close()
 #%%
 #################################################
@@ -292,7 +292,7 @@ plt.plot(date_index.index,vw_goldCI_beta,'r-',label='Broad commodities composite
 plt.plot(date_index.index,vw_ME_betaG,'b-',label = 'S&P beta')
 plt.plot(date_index.index,1-vw_goldCI_beta.values-vw_ME_betaG.values,'g-',label = 'Cash beta')
 plt.legend(loc=2, prop={'size': 7})
-plt.savefig('result/7.jpg')
+plt.savefig('result/7.jpg', dpi = 300)
 plt.close()
 
 fig = plt.figure(8)
@@ -308,7 +308,7 @@ plt.plot(date_index.index,gold_vw_nre_buff_cum,'r-',label='NRE')
 plt.plot(date_index.index,VW_GOLD_result_cum,'b-',label = 'Replicating portfolio')
 #plt.plot(date_index.index,excess_ret_cum2,'g-',label = 'Excess return')
 plt.legend(loc=2, prop={'size': 7})
-plt.savefig('result/8.jpg')
+plt.savefig('result/8.jpg', dpi = 300)
 plt.close()
 
 fig = plt.figure(9)
@@ -319,7 +319,7 @@ plt.rcParams['axes.grid'] = True
 plt.plot(date_index.index,gold_vw_nre_buff,'r-',label='NRE')
 plt.plot(date_index.index,VW_GOLD_result,'b-',label = 'Replicating portfolio')
 plt.legend(loc=2, prop={'size': 7})
-plt.savefig('result/9.jpg')
+plt.savefig('result/9.jpg', dpi = 300)
 plt.close()
 #%%
 #################################################
@@ -392,7 +392,20 @@ plt.legend(loc=2, prop={'size': 10  })
 plt.title('S&P GSCI PETROLEUM & Oil NRE Cumulative Return')
 plt.ylabel('return')
 plt.xlabel('time(Y)')
-plt.savefig('result/10.jpg')
+plt.savefig('result/10.jpg', dpi = 300)
+plt.close()
+
+# S&P 500
+fig = plt.figure(16)
+plt.rcParams["figure.figsize"] = (10,6)
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['axes.grid'] = True
+
+plt.plot(date_index_cum.index,Spx['S&P500'],'r-',label='S&P500')
+plt.legend(loc=2, prop={'size': 10  })
+plt.title('S&P500')
+plt.xlabel('time(Y)')
+plt.savefig('result/16.jpg', dpi = 300)
 plt.close()
 
 ## RSquare
@@ -407,7 +420,7 @@ plt.plot(date_index.index,rsqured_buff['vwoilnre'],'g-',label = 'vwoilnre')
 plt.legend(loc=2, prop={'size': 10  })
 plt.ylabel('RSquare')
 plt.xlabel('time(Y)')
-plt.savefig('result/11.jpg')
+plt.savefig('result/11.jpg', dpi = 300)
 plt.close()
 
 ## Mimic_PF_result Beta
@@ -422,7 +435,7 @@ plt.plot(date_index.index,Mimic_PF_result['x2'],'b-',label = 'MI')
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('Mimic_PF_result Beta')
 plt.xlabel('time(Y)')
-plt.savefig('result/12.jpg')
+plt.savefig('result/12.jpg', dpi = 300)
 plt.close()
 
 ## VW_OIL_result_beta
@@ -437,7 +450,7 @@ plt.plot(date_index.index,VW_OIL_result_beta['x2'],'b-',label = 'MI')
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_OIL_result Beta')
 plt.xlabel('time(Y)')
-plt.savefig('result/13.jpg')
+plt.savefig('result/13.jpg', dpi = 300)
 plt.close()
 
 ## VW_GOLD_result_beta
@@ -452,7 +465,7 @@ plt.plot(date_index.index,VW_GOLD_result_beta['x2'],'b-',label = 'MI')
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_GOLD_result Beta')
 plt.xlabel('time(Y)')
-plt.savefig('result/14.jpg')
+plt.savefig('result/14.jpg', dpi = 300)
 plt.close()
 
 ## VW_GOLD_result_beta
@@ -471,7 +484,7 @@ plt.plot(date_index_cum2.index,(Mimic_PF_ret[0]+1).cumprod()-1,'y-',label='Mimic
 
 plt.legend(loc=2, prop={'size': 10  })
 plt.xlabel('time(Y)')
-plt.savefig('result/15.jpg')
+plt.savefig('result/15.jpg', dpi = 300)
 plt.close()
 
 
