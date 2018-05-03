@@ -34,7 +34,8 @@ gold_CI = pd.DataFrame(origin['SPXGS_GTRM']).reset_index(drop=True)
 Spx = pd.DataFrame(origin['S&P500']).reset_index(drop=True)
 rf = pd.DataFrame(origin['TBILL3M'].fillna(0)/1200).reset_index(drop=True)
 
-date_index = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080630':'20180228']
+date_index_10Y = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080615':'20180228']
+date_index_20Y = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['19980430':'20180228']
 #%% Gold Index 모멘텀 스코어 
 
 #모멘텀 1~12개월 롤링 스코어 (골드)
@@ -127,18 +128,19 @@ rsqured_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoiln
 stderr_buff = pd.DataFrame(columns=['ewnre_momentumci','vwnre_ewgoldci','vwoilnre'])
 #%%
 #################################################
-####### 동일비중 NRE ~  CI 모멘텀 회귀
+# 가중평균 NRE ~  CI 모멘텀 회
 #################################################
 
 text_file = open("result/Mimic_PF_result.txt", "w")
 Mimic_PF_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', 'x2','c') )
 rsquare_list = []
 std_list = []
+# 회귀분석 - 10년 월별로 rolling 하여 회귀분석
 for i in range(numberOfwindow):
     x = []
-    x.append(Ci[0+i:numberOfmonthIn10Y+i])
-    x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i])
-    result = reg_m(nre[0 + i:numberOfmonthIn10Y+i], x)
+    x.append(Ci[0+i:numberOfmonthIn10Y+i]) # 독립변수 Commodity Index
+    x.append(Spx_Index[0 + i:numberOfmonthIn10Y+i]) # 독립변수 Market Index
+    result = reg_m(nre[0 + i:numberOfmonthIn10Y+i], x) # 종속변수 가중 평균 NRE
     rsquare_list.append(result.rsquared)
     std_list.append(result.bse)
     text_file.write(result.summary().as_text())
@@ -150,24 +152,30 @@ text_file.close()
 Ci_buff=pd.DataFrame(Ci[numberOfmonthIn10Y:]).reset_index(drop=True)
 Spx_Index_buff = pd.DataFrame(Spx_Index[numberOfmonthIn10Y:]).reset_index(drop=True)
 rf_buff = pd.DataFrame(rf[121:].values).reset_index(drop=True)
+
+# 회귀분석을 통해 나온 추정계수
 Broad_CI_beta =pd.DataFrame(Mimic_PF_result['x1'])
 ME_beta = pd.DataFrame(Mimic_PF_result['x2'])
-Cash_beta = pd.DataFrame(1-Broad_CI_beta.values-ME_beta.values)
+Cash_beta = pd.DataFrame(1-Broad_CI_beta.values-ME_beta.values) # 현금비중 : beta1,beta2의 합이 1을 초과하는 부분
 
 nre_buff=pd.DataFrame(nre[numberOfmonthIn10Y:])
 
+# 회귀분석을 통해 구한 추정계수를 사용하여 복제 포트폴리오의 수익률을 계산
 Mimic_PF_ret=pd.DataFrame(Ci_buff.values*Broad_CI_beta.values+Spx_Index_buff.values*ME_beta.values+rf_buff*(1-Broad_CI_beta.values-ME_beta.values))
+# NRE 대비 복제 포트폴리오의 초과 수익률을 계산
 excess_ret=pd.DataFrame(-nre_buff.values+Mimic_PF_ret.values)
 
+# Sharpe Ratio 계산 
 sharpe_PF = (Mimic_PF_ret-rf_buff.values).mean()*12/(Mimic_PF_ret.std()*np.sqrt(12))
-
 sharpe_nre = (nre_buff-rf_buff.values).mean()*12/(nre_buff.std().mean()*np.sqrt(12))
 
+# 복제포트폴리오와 NRE의 모델 상관계수 분석
 df = pd.DataFrame()
 df['a'] = Mimic_PF_ret[0].values.astype(float)
 df['b'] = nre_buff[0].reset_index(drop=True)
 Model_corr = df['a'].corr(df['b'])
 
+# 결과 출력
 print('####### 동일비중 NRE ~  CI 모멘텀 회귀 #######')
 print("Rsquare Mean: %.3f" %(sum(rsquare_list) / float(len(rsquare_list))))
 print('Model correlation = %.2f' %(Model_corr))
@@ -179,15 +187,14 @@ print('Annualized return NRE = %.2f%%' %(((1+nre_buff.mean())**12-1)*100))
 print('Volatility NRE = %.2f%%' %(nre_buff.std()*100))
 print('-----------------------------------------')
 
-
+# Replicating NRE : rolling betas using 120 monthly observations 그래프
 fig = plt.figure(1)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
-
-plt.plot(date_index.index,ME_beta,'r-',label='Broad commodities composite beta')
-plt.plot(date_index.index,Broad_CI_beta,'b-',label = 'S&P beta')
-plt.plot(date_index.index,Cash_beta,'g-',label = 'Cash beta')
+plt.plot(date_index_10Y.index,ME_beta,'r-',label='S&P beta')
+plt.plot(date_index_10Y.index,Broad_CI_beta,'b-',label = 'Broad commodities composite beta')
+plt.plot(date_index_10Y.index,Cash_beta,'g-',label = 'Cash beta')
 plt.legend(loc=2, prop={'size': 7})
 plt.title('Replicating NRE : rolling betas using 120 monthly observations')
 plt.ylabel('beta')
@@ -205,9 +212,9 @@ Mimic_PF_ret_cum = (Mimic_PF_ret+1).cumprod()-1
 nre_buff_cum = (nre_buff+1).cumprod().reset_index(drop=True)-1
 excess_ret_cum = (excess_ret+1).cumprod()-1
 
-plt.plot(date_index.index,nre_buff_cum,'r-',label='NRE')
-plt.plot(date_index.index,Mimic_PF_ret_cum,'b-',label = 'Replicating portfolio')
-plt.plot(date_index.index,excess_ret_cum,'g-',label = 'Excess return')
+plt.plot(date_index_10Y.index,nre_buff_cum,'r-',label='NRE')
+plt.plot(date_index_10Y.index,Mimic_PF_ret_cum,'b-',label = 'Replicating portfolio')
+plt.plot(date_index_10Y.index,excess_ret_cum,'g-',label = 'Excess return')
 plt.legend(loc=2, prop={'size': 10})
 plt.title('Growth of a dollar for replicating portfolio and NRE portfolio')
 plt.ylabel('Growth of a dollar($)')
@@ -215,13 +222,14 @@ plt.xlabel('time(Y)')
 plt.savefig('result/2.jpg', dpi = 300)
 plt.close()
 
+
 fig = plt.figure(3)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,nre_buff,'r-',label='NRE')
-plt.plot(date_index.index,Mimic_PF_ret,'b-',label = 'Replicating portfolio')
+plt.plot(date_index_10Y.index,nre_buff,'r-',label='NRE')
+plt.plot(date_index_10Y.index,Mimic_PF_ret,'b-',label = 'Replicating portfolio')
 plt.legend(loc=2, prop={'size': 7})
 plt.title('Monthly Return of NRE and replicating portfolio')
 plt.ylabel('return')
@@ -232,6 +240,7 @@ plt.close()
 #################################################
 ####### 시총비중 Gold NRE ~  가중평균 Gold CI 회귀
 #################################################
+# 시가총액 가중 평균으로 Gold NRE 구성 
 vw_gold=pd.DataFrame()
 for i in range(n):
     r=goldcap[i:i+1]/goldcap.sum(axis=1)[i]
@@ -244,6 +253,7 @@ VW_GOLD_result=pd.DataFrame(index=np.arange(0, numberOfwindow), columns=('x1', '
 rsquare_list = []
 std_list=[]
 text_file = open("result/vw_gold.txt", "w")
+# 회귀분석 - 10년 월별로 rolling 하여 회귀분석
 for i in range(numberOfwindow):
     x = []
     x.append(ret_goldCI[1+i:121+i])
@@ -263,15 +273,16 @@ gold_vw_nre = pd.DataFrame(gold_vw_nre).reset_index(drop=True)
 VW_GOLD_result_beta = VW_GOLD_result
 VW_GOLD_result=pd.DataFrame(ret_goldCI_buff.values*vw_goldCI_beta.values+Spx_Index_buff.values*vw_ME_betaG.values+rf_buff*(1-vw_goldCI_beta.values-vw_ME_betaG.values))
 
+# Sharpe Ratio 계산 
 sharpe_PF_3 = (VW_GOLD_result-rf_buff.values).mean()*12/(VW_GOLD_result.std()*np.sqrt(12))
 sharpe_nre_3 = (gold_vw_nre_buff.values-rf_buff.values).mean()*12/(gold_vw_nre_buff.values.std()*np.sqrt(12))
-#excess_ret2 = (-gold_vw_nre_buff.reset_index(drop=True)+VW_GOLD_result.reset_index(drop=True)).dropna(axis=0,how='all')[0]
 
 df2 = pd.DataFrame()
 df2['a'] = VW_GOLD_result[0].values.astype(float)
 df2['b'] = pd.DataFrame(gold_vw_nre_buff)[0].reset_index(drop=True)
 Model_corr2 = df2['a'].corr(df2['b'])
 
+# 결과 출력
 print('####### 시총비중 Gold NRE ~  가중평균 Gold CI 회귀  #######')
 print("Rsquare Mean: %.3f" %(sum(rsquare_list) / float(len(rsquare_list))))  
 print('Model correlation = %.2f' %(Model_corr2))
@@ -283,18 +294,20 @@ print('Annualized return NRE = %.2f%%' %(((1+gold_vw_nre_buff.mean())**12-1)*100
 print('Volatility NRE = %.2f%%' %(gold_vw_nre_buff.std()*100))
 print('-----------------------------------------')
 
+# 가중 평균 GOLD 복제 포트폴리오의 Beta(투자 비중) 추이 그래프
 fig = plt.figure(7)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,vw_goldCI_beta,'r-',label='Broad commodities composite beta')
-plt.plot(date_index.index,vw_ME_betaG,'b-',label = 'S&P beta')
-plt.plot(date_index.index,1-vw_goldCI_beta.values-vw_ME_betaG.values,'g-',label = 'Cash beta')
+plt.plot(date_index_10Y.index,vw_goldCI_beta,'r-',label='Broad commodities composite beta')
+plt.plot(date_index_10Y.index,vw_ME_betaG,'b-',label = 'S&P beta')
+plt.plot(date_index_10Y.index,1-vw_goldCI_beta.values-vw_ME_betaG.values,'g-',label = 'Cash beta')
 plt.legend(loc=2, prop={'size': 7})
 plt.savefig('result/7.jpg', dpi = 300)
 plt.close()
 
+# 가중 평균 GOLD 복제 포트폴리오와 GOLD NRE 누적 수익률 그래프 
 fig = plt.figure(8)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
@@ -302,31 +315,30 @@ plt.rcParams['axes.grid'] = True
 
 VW_GOLD_result_cum = (VW_GOLD_result+1).cumprod()-1
 gold_vw_nre_buff_cum = (gold_vw_nre_buff+1).cumprod().reset_index(drop=True)-1
-#excess_ret_cum2 = (excess_ret2+1).cumprod()-1
 
-plt.plot(date_index.index,gold_vw_nre_buff_cum,'r-',label='NRE')
-plt.plot(date_index.index,VW_GOLD_result_cum,'b-',label = 'Replicating portfolio')
-#plt.plot(date_index.index,excess_ret_cum2,'g-',label = 'Excess return')
+plt.plot(date_index_10Y.index,gold_vw_nre_buff_cum,'r-',label='VW GOLD NRE')
+plt.plot(date_index_10Y.index,VW_GOLD_result_cum,'b-',label = 'Replicating portfolio')
 plt.legend(loc=2, prop={'size': 7})
 plt.savefig('result/8.jpg', dpi = 300)
 plt.close()
 
+# 가중 평균 GOLD 복제 포트폴리오와 GOLD NRE 수익률 그래프 
 fig = plt.figure(9)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,gold_vw_nre_buff,'r-',label='NRE')
-plt.plot(date_index.index,VW_GOLD_result,'b-',label = 'Replicating portfolio')
+plt.plot(date_index_10Y.index,gold_vw_nre_buff,'r-',label='NRE')
+plt.plot(date_index_10Y.index,VW_GOLD_result,'b-',label = 'Replicating portfolio')
 plt.legend(loc=2, prop={'size': 7})
 plt.savefig('result/9.jpg', dpi = 300)
 plt.close()
 #%%
 #################################################
-####### Value Weighted OIL NRE 
+####### 시총비중 Oil NRE ~  가중평균 Oil CI 회귀 
 #################################################
+# 시가총액 가중 평균으로 Oil NRE 구성 
 vw_oil=pd.DataFrame()
-
 for i in range(n):
     r=oilcap[i:i+1]/oilcap.sum(axis=1)[i]
     vw_oil=pd.concat([vw_oil,r])
@@ -379,15 +391,15 @@ print('-----------------------------------------')
 print('oil ci, oil nre corr = %.5f' %(ret_petCI['SPXGS_PTRM'].corr(pd.DataFrame(oil_vw_nre)[0])))
 print('gold ci, gold nre corr = %.5f' %(ret_goldCI['SPXGS_GTRM'].corr(gold_vw_nre[0])))
 
-date_index_cum = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['19980430':'20180228']
+# Oil CI와 가중 평균 Oil NRE 누적 수익률 그래프
 
 fig = plt.figure(10)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index_cum.index,(ret_petCI['SPXGS_PTRM']+1).cumprod()-1,'r-',label='S&P GSCI PETROLEUM')
-plt.plot(date_index_cum.index,(pd.DataFrame(oil_vw_nre)[0]+1).cumprod()-1,'b-',label = 'Oil NRE')
+plt.plot(date_index_20Y.index,(ret_petCI['SPXGS_PTRM']+1).cumprod()-1,'r-',label='S&P GSCI PETROLEUM')
+plt.plot(date_index_20Y.index,(pd.DataFrame(oil_vw_nre)[0]+1).cumprod()-1,'b-',label = 'Oil NRE')
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('S&P GSCI PETROLEUM & Oil NRE Cumulative Return')
 plt.ylabel('return')
@@ -395,43 +407,43 @@ plt.xlabel('time(Y)')
 plt.savefig('result/10.jpg', dpi = 300)
 plt.close()
 
-# S&P 500
+# S&P 500 지수 그래프 
 fig = plt.figure(16)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index_cum.index,Spx['S&P500'],'r-',label='S&P500')
+plt.plot(date_index_20Y.index,Spx['S&P500'],'r-',label='S&P500')
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('S&P500')
 plt.xlabel('time(Y)')
 plt.savefig('result/16.jpg', dpi = 300)
 plt.close()
 
-## RSquare
+## RSquare 변동 추이 그래프 
 fig = plt.figure(11)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,rsqured_buff['ewnre_momentumci'],'r-',label='ewnre_momentumci')
-plt.plot(date_index.index,rsqured_buff['vwnre_ewgoldci'],'b-',label = 'vwnre_ewgoldci')
-plt.plot(date_index.index,rsqured_buff['vwoilnre'],'g-',label = 'vwoilnre')
+plt.plot(date_index_10Y.index,rsqured_buff['ewnre_momentumci'],'r-',label='ewnre_momentumci')
+plt.plot(date_index_10Y.index,rsqured_buff['vwnre_ewgoldci'],'b-',label = 'vwnre_ewgoldci')
+plt.plot(date_index_10Y.index,rsqured_buff['vwoilnre'],'g-',label = 'vwoilnre')
 plt.legend(loc=2, prop={'size': 10  })
 plt.ylabel('RSquare')
 plt.xlabel('time(Y)')
 plt.savefig('result/11.jpg', dpi = 300)
 plt.close()
 
-## Mimic_PF_result Beta
+## 모멘텀 pf의 회귀분석 추정 계수(투자 비중)
 fig = plt.figure(12)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,Mimic_PF_result['x1'],'r-',label='CI')
-plt.plot(date_index.index,Mimic_PF_result['x2'],'b-',label = 'MI')
-#plt.plot(date_index.index,Mimic_PF_result['c'],'g-',label = 'c')
+plt.plot(date_index_10Y.index,Mimic_PF_result['x1'],'r-',label='CI')
+plt.plot(date_index_10Y.index,Mimic_PF_result['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,Mimic_PF_result['c'],'g-',label = 'c') #알파
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('Mimic_PF_result Beta')
 plt.xlabel('time(Y)')
@@ -444,9 +456,9 @@ plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,VW_OIL_result_beta['x1'],'r-',label='CI')
-plt.plot(date_index.index,VW_OIL_result_beta['x2'],'b-',label = 'MI')
-#plt.plot(date_index.index,VW_OIL_result_beta['c'],'g-',label = 'c')
+plt.plot(date_index_10Y.index,VW_OIL_result_beta['x1'],'r-',label='CI')
+plt.plot(date_index_10Y.index,VW_OIL_result_beta['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,VW_OIL_result_beta['c'],'g-',label = 'c') #알파
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_OIL_result Beta')
 plt.xlabel('time(Y)')
@@ -459,43 +471,32 @@ plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
 
-plt.plot(date_index.index,VW_GOLD_result_beta['x1'],'r-',label='CI')
-plt.plot(date_index.index,VW_GOLD_result_beta['x2'],'b-',label = 'MI')
-#plt.plot(date_index.index,VW_GOLD_result_beta['c'],'g-',label = 'c')
+plt.plot(date_index_10Y.index,VW_GOLD_result_beta['x1'],'r-',label='CI')
+plt.plot(date_index_10Y.index,VW_GOLD_result_beta['x2'],'b-',label = 'MI')
+#plt.plot(date_index.index,VW_GOLD_result_beta['c'],'g-',label = 'c') #알파
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_GOLD_result Beta')
 plt.xlabel('time(Y)')
 plt.savefig('result/14.jpg', dpi = 300)
 plt.close()
 
-## VW_GOLD_result_beta
-
-date_index_cum2 = pd.DataFrame(goldprice.index).set_index('Date',drop=False).loc['20080615':'20180228']
+## SP500, SP GSCI PET, SP GSCI GOLD, Momentum PF 누적 수익률 그래프 
 
 fig = plt.figure(15)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
 plt.rcParams['axes.grid'] = True
-
-plt.plot(date_index_cum2.index,(snp_500_ret+1).cumprod()-1,'r-',label='S&P500')
-#plt.plot(date_index_cum2.index,(ret_petCI['SPXGS_PTRM'][1:]+1).cumprod()-1,'b-',label='SPXGS_PTRM')
-#plt.plot(date_index_cum2.index,(ret_goldCI['SPXGS_GTRM'][1:]+1).cumprod()-1,'g-',label='SPXGS_GTRM')
-plt.plot(date_index_cum2.index,(Mimic_PF_ret[0]+1).cumprod()-1,'y-',label='Mimic_PF_ret')
-
+plt.plot(date_index_10Y.index,(snp_500_ret+1).cumprod()-1,'r-',label='SP500')
+plt.plot(date_index_10Y.index,(ret_petCI['SPXGS_PTRM'][121:]+1).cumprod()-1,'b-',label='SP GSCI PET')
+plt.plot(date_index_10Y.index,(ret_goldCI['SPXGS_GTRM'][121:]+1).cumprod()-1,'g-',label='SP GSCI GOLD')
+plt.plot(date_index_10Y.index,(Mimic_PF_ret[0]+1).cumprod()-1,'y-',label='Momentum PF')
 plt.legend(loc=2, prop={'size': 10  })
+plt.title('S&P500/CI/Momentum PF Cumulative Return')
 plt.xlabel('time(Y)')
 plt.savefig('result/15.jpg', dpi = 300)
 plt.close()
 
-
-# Histogram Plot
-#plt.hist(VW_OIL_result.values,30)
-#plt.show()
-#
-#plt.hist(VW_GOLD_result.values,30)
-#plt.show()
-
-#Skewness - Remove Outlier
+# Skewnes 계산 
 minm_MM = Mimic_PF_ret.sort_values(by=0).reset_index(drop=True)
 minm_Oil = VW_OIL_result.sort_values(by=0).reset_index(drop=True)
 minm_Gold = VW_GOLD_result.sort_values(by=0).reset_index(drop=True)
