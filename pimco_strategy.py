@@ -473,7 +473,7 @@ plt.rcParams['axes.grid'] = True
 
 plt.plot(date_index_10Y.index,VW_GOLD_result_beta['x1'],'r-',label='CI')
 plt.plot(date_index_10Y.index,VW_GOLD_result_beta['x2'],'b-',label = 'MI')
-#plt.plot(date_index.index,VW_GOLD_result_beta['c'],'g-',label = 'c') #알파
+#plt.plot(date_index.index,VW_GOLD_result_beta['c'],'g-',label = 'c') #알파값
 plt.legend(loc=2, prop={'size': 10  })
 plt.title('VW_GOLD_result Beta')
 plt.xlabel('time(Y)')
@@ -481,7 +481,6 @@ plt.savefig('result/14.jpg', dpi = 300)
 plt.close()
 
 ## SP500, SP GSCI PET, SP GSCI GOLD, Momentum PF 누적 수익률 그래프 
-
 fig = plt.figure(15)
 plt.rcParams["figure.figsize"] = (10,6)
 plt.rcParams['lines.linewidth'] = 2
